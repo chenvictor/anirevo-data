@@ -1,0 +1,1805 @@
+[
+  {
+    "category": "Official Contests",
+    "events": [
+      {
+        "title": "AMV Contest",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "4PM",
+            "end": "5:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "The best of the best in Anime Music Videos will be on display this year! You'll laugh, maybe cry, perhaps scratch your head... It's all for the fun and creativity! Help decide who will win this year at this special event, or just come to kick back and watch some great videos!",
+        "tags": []
+      },
+      {
+        "title": "Anirevo Idol Preliminaries",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "4PM",
+            "end": "6PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "This is a closed-door event, as potential contestants perform for their peers and our panel of judges see if they can perform at the finals on Sunday! Drop-In contestants are welcome, but please bring your music on a USB and have several choices to avoid potential repeats. Please only contestants and up to one additional friend should attend this event.",
+        "tags": []
+      },
+      {
+        "title": "Anirevo Idol Finals",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2:30PM",
+            "end": "4PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Come on down to see contestants perform covers of their favorite Japanese tunes in front of loving fans, as they face off against each other for the title of Anirevo Idol 2018.",
+        "tags": []
+      },
+      {
+        "title": "Cosplay Contest",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "5PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Anirevo's annual Cosplay Contest is a chance for people to show off the fruits of their labor, brought on by hours of blood, sweat, and tears. Sit back, relax, and prepare to laugh and cheer the contestants on! Featuring special guest cosplay judges!",
+        "tags": []
+      },
+      {
+        "title": "Swimsuit Contest",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "6:30PM",
+            "end": "8:30PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "It's back! Our special guest Jacob Powers of H. Cupcake Productions presents the annual Swimsuit Contest where contestants strut their stuff and compete to out do each other through their introductions, performances and Q&A session! Who will be victorious this year? Make sure to stop by and see!",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Worst Cosplay Contest",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "11AM",
+            "end": "11:30AM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Have you ever watched a Cosplay Contest and thought, 'This is great... but it would be better if it were the exact opposite?' Well, like a version of the Cosplay Contest from the darkest timeline, we bring you the return of the Worst Cosplay Contest!\n\nThe Worst Cosplay Contest is a just-for-fun cosplay improv show where audience members are the contestants. Get up on stage, make a fool of yourself and join us all in having a laugh in a series of wacky quizzes, games, and general weirdness.",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Concerts & Performances",
+    "events": [
+      {
+        "title": "Anirevo Convention Idol Festival",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10:30AM",
+            "end": "1PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Dust off your wota sticks and prepare to cheer for your favorite idol team! Several local Idol Groups will share the stage, performing dance covers from anime and J-pop groups.",
+        "tags": []
+      },
+      {
+        "title": "Anirevo's Got Talent",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "12PM",
+            "end": "1:30PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "A stage where attendees, guests, and whomever, can converge and bring something magical to life! Singers, dancers, magicians, and musicians. All are welcome!",
+        "tags": []
+      },
+      {
+        "title": "Concert for the Otaku! ~Pardoy Palooza~",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Join 3 time Otafest Idol winner and Anirevo's former Director of Programming, Jeremy Androsoff, as he performs a ridiculous show celebrating (and parodying) the joys of fandom overall! This unapologetic and random variety show will cover everything from Sailer Moon to Bronies, Yaoi fans to Cosplayers, and everything in between. It's all fair game!",
+        "tags": [],
+        "age": 13
+      },
+      {
+        "title": "Flying Tonkatsu Concert",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "7:30PM",
+            "end": "8:30PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Flying Tonkatsu is a Vancouver based music ensemble that arranges and performs anime soundtracks. Being excited about anime and the music within, their repertoire includes loyal interpretations of background music from your favorite anime shows, as well as arrangements from various popular serioes. Through the musical instruments, the group hopes to recreate and share beautiful and memorable moments from anime across eras and genres.",
+        "tags": []
+      },
+      {
+        "title": "IDOLiSH7 NATSU☆Voyage! BOYiSH7 2nd Anniversary Live",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2PM",
+            "end": "3PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "Join in on a summer voyage to Anirevo with BOYiSH7! Let the idols from IDOLiSH7, TRIGGER, and Re:vale pump you up on how to Let's☆SUMMER with lots of dancing, singing, games, and preizes! You'll also learn more about their journey as Vancouver's first idol boy cover group during their Q&A and of course, their most heartthrobbing performance yet!",
+        "tags": []
+      },
+      {
+        "title": "Kimono Fashion Show",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "5:30PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Come and watch a beautiful display of kimono fashion! We will be demonstrating the elements of kimono, and their influence on loli dressing and anime costumes. Featuring kimonos by Fumiko",
+        "tags": []
+      },
+      {
+        "title": "Natsu-Heroes Final LoveLive! ~μ's and Aqours Forever♪♪♪♪♪♪♪♪♪~",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "1:30PM",
+            "end": "3PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "The end of an era has come. Join Natsu-Heroes for their 4th annual Anirevo panel as they say goodbye to performing as Muse and Aqours. Let's reminisce on our journey thus far and connect over our shared love for Love Live and idols as a whole. Watch them sing and dance to the hits and fan favorites from Love Live: School Idol Project. (With a little bit of variety idol songs sprinkled in for good measure.) Let's make this a memorable show!",
+        "tags": []
+      },
+      {
+        "title": "Sigma Anniversary Live: Summer Parade",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "5PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "Returning once again to Anirevo, Sigma is prepared to bring you another exciting live with songs from Love Live! Sunshine! They will also be making an important announcement so make sure to come and join in on this amazing live!",
+        "tags": []
+      },
+      {
+        "title": "Twizzie Ramos",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "12:30PM",
+            "end": "1:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "Twizzie Ramos: The Otaku Rapper.\n\nLive performance meshing Anime/gaming culture with Hip Hop!",
+        "tags": []
+      },
+      {
+        "title": "We are Zeus!",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "5PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "Join in for Idol group Zeus' exciting dance covers of ACG and idol songs!",
+        "tags": []
+      },
+      {
+        "title": "背徳のシナリオ - Idol Group",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "2PM",
+            "end": "3PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "We are a group that mainly focuses on Showa (and early 1990s) idol culture. Since Showa era is the golden age of Japan's music industry, it will be nice to promote through the youth. We will introduce some history of Japan along with some live performances that would bring our audiences back in time.",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Main Events",
+    "events": [
+      {
+        "title": "Opening Ceremonies",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Join us as we officially celebrate the opening of this year's event! Plus, learn what to expect for Anirevo 2018!",
+        "tags": []
+      },
+      {
+        "title": "Closing Ceremonies",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "7PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "All good things must come to an end. Finish off the weekend with our Closing Ceremonies!",
+        "tags": []
+      },
+      {
+        "title": "Anirevo Charity Auction",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "5:30PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Our Annual Charity auction returns! Come on out and bid on some great stuff all in support of local charity!",
+        "tags": []
+      },
+      {
+        "title": "Anirevo Lolita Ball",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11PM",
+            "end": "12AM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Whether you like Gothic, sweet, or classic forms of Lolita, come show it off at our Anirevo Ball, and feel transported to the Victorian era!",
+        "tags": []
+      },
+      {
+        "title": "That 70s Dating Game",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "9PM",
+            "end": "10PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "That 70's Anime Dating Game (18+) is back again for Anirevo! Have you ever seen those cheesy dating games from the 70's where you have a bachelor or bachelorette looking for love, asking some contestants some questions and whoever answers the most desirably they choose to date? Well this is a nerdy, 18+ version. The bachelor(ettes) will be looking for love out of the crowd! So come on stage if you're chosen, or cheer for whoever you think is owning the stage! The winner will get a date (a hug, picture, and a prize).\n\nYour host, as always, is Savi and friends!",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Walk-off: East vs. West",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "2PM",
+            "end": "4PM"
+          },
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1:30PM",
+            "end": "3:30PM"
+          },
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Two worlds collide, rival fandoms. There's so much at stake. Does the crowd understand? Is it East versus West, or man against man? Join us in this titanic clash of fandoms from the East and West! Watch our contestants shake, shimmy, and slide their way into the DMs of your hearts in this three day battle royale. (PG-13)",
+        "tags": [],
+        "age": 13
+      }
+    ]
+  },
+  {
+    "category": "Community",
+    "events": [
+      {
+        "title": "Anime Abominations",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "11PM",
+            "end": "12AM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Are you someone who nitpicks flaws in animation? Do you jump onto Twitter to share screen caps from anime where characters go off modelz? If you do, then let us break you of that awful habit as we show you a world where people use primitive 3D animation tools to create anime that never should have been. You'll never complain about good old 2D anime again once you've stared into the glassy dead eyes of these 3D abominations of art.",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Anime Figures Q&A with Otaku HQ",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "9:30PM",
+            "end": "10:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Come share your love of anime figures with fellow collectors and the webmaster of Otaku HQ! We will cover important events since Anirevo 2017, right up to the annual Wonder Festival 2018 Summer!! Come prepared for our Q&A session, and stay till the end for the prize draw!",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Awesome Anime Openings",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11AM",
+            "end": "12PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "You know that opening minute and thiry seconds before you favorite anime starts? I'll bet that you skip it most of the time to get to what you really want. Well, not this time. Come see some of the best openings anime has to offer and, as always, no skipping allowed!",
+        "tags": []
+      },
+      {
+        "title": "BanG Dream! Girls Band Party! - The Mobile Game That Unites Anime Fans Worldwide",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "3:30PM",
+            "end": "4:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "BanG Dream! Girls Band Party! is the Japanese mobile game taking the world by storm. Come learn about the series, the game, and why it has become such a worldwide success!",
+        "tags": []
+      },
+      {
+        "title": "Bara vs. Yaoi",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "9PM",
+            "end": "10PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Many of us are familiar with the term 'Yaoi,' which is generally described as love and intimate relationships depicted between two males, as written by females for a female audience. But not many are aware of the term 'Bara,' which is a more gruff and realistic depiction of love and intimate relationships between two males, as written by gay men for gay men. We will discuss the differences and watch some scenes from some known and infamous Yaoi series, and open a discussion on the topic. There will be some objectionable content shown!",
+        "tags": []
+      },
+      {
+        "title": "Batsu Games ft. Toki Meki Maids",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "7:30PM",
+            "end": "8:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Based on the 'Batsu' or punishment games on Japanese Variety shows. Join the Tokimeki maids as they play various games with the audience; however, be forewarned, losers get punished! With fun & interactive games you have never seen before, you'll enjoy an entertaining show while getting to know the maids and their quirks!",
+        "tags": []
+      },
+      {
+        "title": "Cliches for Days",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "4:30PM",
+            "end": "5:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Recreate a popular anime cliche and then make it your own to be crowned the new Cliche Ruler and/or Cringe Emperor.",
+        "tags": []
+      },
+      {
+        "title": "Cosplay Horror Stories",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "6:30PM",
+            "end": "7:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Ever have something go horribly wrong while making your cosplay? Well come tell us! Cosplay horror stories is a panel built around horrible, but funny stories about things gone wrong while trying to make cosplay. This panel is filled with funny stories and is a great time to laugh and feel like it's okay to make mistakes, especially if it gives you a good story.",
+        "tags": []
+      },
+      {
+        "title": "Delightfully Devilman, Seymour - The Cultural Impact of Go Nagai",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "6:30PM",
+            "end": "7:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Go Nagai is best known as the creator of Devilman, Cutie Honey, and Mazinger Z, but in reality he's responsible for so much more. He's created so many staples of anime that to call him a cultural icon in Japan would be an understatement. He's also had an enormous cultural impact in Italy,  France, South America, and even Quebec - so why has it taken so long for him to be recognized in the rest of Canada and the United States? This panel will take a look at Go Nagai's influence and how Devilman Crybaby finally broke this barrier domestically.",
+        "tags": []
+      },
+      {
+        "title": "Directing for Anime with Clifford Chapin",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Learn about what goes into directing voice over for anime with our special guest Clifford Chapin!",
+        "tags": []
+      },
+      {
+        "title": "From 2D to 3D - Anime Model Creation with Digitrevx",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "This is a high level lecture style panel about the methods Digitrevx uses. A 3D modeler with industry experience to make characters for MMD. This touches on the process from brain storming an idea to finished working character.",
+        "tags": []
+      },
+      {
+        "title": "Hentai Dubbing",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11PM",
+            "end": "12AM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "What if hentai was dubbed over by a panel of ridiculous cosplayers? This is the panel where we find out what will happen. Will it be awkward? Or just down right hilarious. Taking suggestions, the panelist will dub hentai scenes with suggestions from the audience. If you want to see how this turns out, hope to see you there.",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Homestuck? At MY Con? More Likely Than You Think",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "4PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "A Homestuck panel in 2018? That's right! join a group of cosplayers for fun games and an in-character Q&A with suggestions from the audience. If you want to see how this turns out, hope to see you there.",
+        "tags": []
+      },
+      {
+        "title": "How to eSports",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Interested about going pro in gaming? Or do you simply like to watch the tournaments and amazing plays?\n\nThis panel will cover everything eSports: history, benefits and risks, marketing, and how to start your own path!\n\nAs the industry of FGC and eSports is growing in our community, join us if you are interested!",
+        "tags": []
+      },
+      {
+        "title": "Intro to World Masterpiece Theater",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "3:30PM",
+            "end": "4:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Do you enjoy reading classic literature but find it cuts into your anime viewing time? Why not combine the best of both with the World Masterpiece Theater series. Covering over 40 years of anime history, see classic novels like 'Peter Pan', and 'Anne of Green Gables' from an entirely different perspective.",
+        "tags": []
+      },
+      {
+        "title": "Is Your Hentai Legal in Canada",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11PM",
+            "end": "12AM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "So who gets to decide what's obscene in this country anyway? The answer may be more arbitrary than you think. Come learn about the many unpredictable hurdles of importing content into Canada, whether or not there's any hope for improvement and, most importantly, whether or not your favorite hentai made the cut.",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Japanese for Beginners",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "'Nihongo wa totemo tanoshii desu yo!' Wait, what? Join Amiboshi for a quick introductory crash-course of the Japanese language.",
+        "tags": []
+      },
+      {
+        "title": "MikuMikuDance by Digitrevx",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "3PM",
+            "end": "4PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "What MMD is about, why people enjoy it, how it started, and the online community of millions that support it. Also the clever uses it has.",
+        "tags": []
+      },
+      {
+        "title": "Modeling 101",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Tips, tricks, and hard-fast rules that take your convention photos from Party City dumpster fire to HOLU SUPER MODEL! What the experts know but only Sharkie Kitty will tell you! Calling cosplay novices to experts, grandpas to toddlers - come ready to pose!",
+        "tags": []
+      },
+      {
+        "title": "My Hero Academia: Fan Q&A",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12:30PM",
+            "end": "1:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Want to become a hero? Not sure where to start? Why not ask one of the incredible heroes from the anime Boku no Hero Academia! In this panel you may ask and enjoy answers from some of the coolest and cutest heroes in anime.",
+        "tags": []
+      },
+      {
+        "title": "Name That Anime Tune",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "2:30PM",
+            "end": "3:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Ah, the music we hear in the dear anime series we all love... Well, sit down and buckle up, as we explore a gauntlet of new and old titles. Think you have what it takes to name the songs based on short clips? Can you aslo name the series it's from... and what of the artist? To the victors, come to spoils, so give it a try for some prizes!! Caveat: There will be a round where we play songs in reverse... how well can you do?",
+        "tags": []
+      },
+      {
+        "title": "No Wota? No Idol? Presents: Wotagei Workshop",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "4PM",
+            "end": "6PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Japanese fans use their light sticks not only for having fun at concerts, but for performing an art called 'cyalume dance' or 'wotagei dance'. At this panel, learn how to do moves such as the OAD, thundersnake, muramasa, Susanoo and others - and meet with other local wotagei!",
+        "tags": []
+      },
+      {
+        "title": "No Wota? No Idol? RELOADED",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "7PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Have you ever wanted to cheer on your favorite anisong artists, Japanese idol(s) or seiyuu(s), but not sure how? Learn more about how Japanese fans chant to the music and utilize light sticks at concerts!",
+        "tags": []
+      },
+      {
+        "title": "Pattern Drafting 101 - Where do I start?",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1PM",
+            "end": "2:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "New to sewing and patterns? Having trouble understanding patterns and don't know where to start? This panel is for you! During this panel we will talk about pattern basics and help you understand where to start, so you can start making some amazing cosplays!",
+        "tags": []
+      },
+      {
+        "title": "Pokemon GO 2018",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "What's new in the world of Pokemon Go? Attend this panel for a summary of lengedaries, in-game weather, friendshipm and trading. We'll show you how to connect to the network of Pokemon go communities throughout the world and some of the events they organize. Prizes will be given throughout the panel.",
+        "tags": []
+      },
+      {
+        "title": "Popular Mecha Model Designers",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "8PM",
+            "end": "9PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Ever wondered why certain Japanese Mechas look a certain way? Ever wondered who designed them ,and how or where they got their inspiration from? Come join us on an overview of the noteworthy Japanese Mecha designers that have shaped the way Mecha is designed today and how they have impacted the animation, scale modeling, and toy industry.",
+        "tags": []
+      },
+      {
+        "title": "Remembering Isao Takahata: The Other Side of Studio Ghibli",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "4:30PM",
+            "end": "5:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "2018 saw the passing of Isao Takahata. Despite being the co-founder of Studio Ghibli and director of works such as Grave of the Fireflies and The Tale of the Princess Kaguya, many still don't seem to know who he was. Come learn more about his work, both before and after Studio Ghibli.",
+        "tags": []
+      },
+      {
+        "title": "Sailer Moon ~A Celebration 25+ Years in the Making~",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "2:30PM",
+            "end": "3:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Sailor Moon has been an undeniable sensation and pioneer in helping to usher anime over to North America in the 90's and make it more mainstream. Believe it or not, it has been 25 years since this series first hit Japanese Television, and we are going to celebrate everything within this magical world! Join us for a trip down nostalgia lane, as we cover the anime that started it all, as well as the Live Action series, the Musical legacy, and Sailor Moon Crystal, plus some odd points along the way! If we have time, there may be a contest with prizes as well!",
+        "tags": []
+      },
+      {
+        "title": "Sakurra's Yaoi Bedtime Stories",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "10PM",
+            "end": "11PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Do you like Yaoi? Yes? Perfect! Come sit down and experience yaoi manga read like you have never heard it before! Out loud and proud! From sweet romances to bara, we've got it all!",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Sewing 101 - Where do I start?",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "have a love for sewing but just don't know where to start? This panel is for you! We will be talking about different ways to tackle sewing and what resources are out there to help you find a good starting point to your sewing journey.",
+        "tags": []
+      },
+      {
+        "title": "The 404s Present: The Last Pants Standing Show",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10:30PM",
+            "end": "11:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "After the sun goes down, the comedy gets suggestive and the improvisers get 'comfortable'. You hold the power over The 404s in this 18+ panel where you decide who will lose their pants next. Who will be this year's winner of Last Pants Standing? Come check out the show to find out, and stay to the very end for a special game reserved for only the most daring of improver!",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "The Craziest Director in Anime, Gundam's Tomino",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "From Astroboy to Gundam G in Recongustia, the history of anime's most out there director, Yoshiyuki Tomino.",
+        "tags": []
+      },
+      {
+        "title": "The History of Mecha Anime",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "7:30PM",
+            "end": "9:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Come join us for a brief overview of the most influential Mecha Anime from the humble origins of Astroboy from 1950's through to the 1970's Super Robot wars era. Come take a glimpse into the past to gain an understanding of what the anime industry was like.\n\nNote: This is part 1 in a 2 part series.",
+        "tags": []
+      },
+      {
+        "title": "Weapons & Prop Making Basics",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "8PM",
+            "end": "9PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Want to learn how to make weapons/props for your next cosplay? We cover beginner-friendly methods and materials such as wood and thermoplastics. Covers how to gather resources, properly size your prop, build it, and paint it. Also includes stories of the panelist's own past failures.",
+        "tags": []
+      },
+      {
+        "title": "Yaoi and Yuri Mad Libs",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2PM",
+            "end": "3PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "It seems like it's easier to be a Yaoi fan than a Yuri fan nowadays. We'll talk about some easy steps to ease into the other rabbit hole that is Yuri. It's hard to make this not sound bad. ",
+        "tags": []
+      },
+      {
+        "title": "Your Name. Starring Keanu Reeves",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "9:30PM",
+            "end": "10:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Makoto Shinkai's 'your name.' has captured hearts and imaginations around the world since its premiere in 2016, but some people may have noticed that the story is a little... familiar? There have actually been many similar films and stories over the years, many of which have been... let's say, not as successful with the premise. Where does Keanu fit in to all this? Come to find out! (NOTE: Spoilers for 'your name.') ",
+        "tags": []
+      },
+      {
+        "title": "Yuri On Ice: Booty Chronicles",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "9PM",
+            "end": "10PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Do you have a beautiful booty? Let Victor, Yuri, Christoph, and Mila have a look! Join them for a night of fun, skater talk, and of course a booty rating!",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Interactive Events",
+    "events": [
+      {
+        "title": "J-pop and K-pop Dance Workshop",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Have you ever watched the dance version of a song and have always told yourself to learn it, but you don't get how? Well, U.A Dance is here for just that! Running on our 3rd year of running a panel with Anirevo, U.A Dance team is back to teach more j-pop and k-pop dances! All you have to do is come by, dress comfy, bring water, and be willing to learn. Let's dance! ",
+        "tags": []
+      },
+      {
+        "title": "Foam Sword Tournament 2018",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1:30PM",
+            "end": "3:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Retaining for the 5th consecutive year, Foam Sword Tournament 2018 will be providing thrilling and blood boiling interactive entertainment! Do you like swords? Do you like to watch people in cosplay pretending to know how to fight with a sword? If yes, then c'mon down! This year, we will be hosting a qualifier round before the main tournament, so come get into the queue early and you just might become the champion this year! See you then! ",
+        "tags": []
+      },
+      {
+        "title": "Iron Cosplay",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "10PM",
+            "end": "11:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Push your craftsmanship to the limit to become the Iron cosplayer! Challenge yourself or your team and go head to head to create a couplay in under 20 minutes using an assortment of surprise materials, or just come watch as the chaos unfolds!",
+        "tags": []
+      },
+      {
+        "title": "Mock-Dating: The Speed-Dating Adjacent Experience for Friendship",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "11PM",
+            "end": "12AM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Want to make friends? Ever wish you could connect with someone instead of creepily staring at the cool people sitting a couple seats away from you? Mock-Dating throws away the pressure of bonding with strangers and gives you the potential to build new connections in 10-minute rotations. Oh and we get it, talking to strangers can be awkward. Our main objective is to use constructive feedback to improve communication. After chatting with your partner, you and your partner will fill out a questionnaire. The form is designed to give advice and a better understanding of the way you interact. Everything is constructive and respect is mandatory.",
+        "tags": []
+      },
+      {
+        "title": "Sound Lounge",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "10AM",
+            "end": "5PM"
+          },
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10AM",
+            "end": "5PM"
+          },
+          {
+            "date": "Sunday, Aug 5",
+            "start": "10AM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Foyer",
+        "desc": "Head down to the Sound Lounge for sweet, sweet melodies brought to you by Itadaki-Musics, MultiMusics, and friends from the community. Playing live for you, we invite you to come and enjoy Anime & Japanese music all weekend long' ",
+        "tags": []
+      },
+      {
+        "title": "Omamori Charm Shop",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "12PM",
+            "end": "4PM"
+          },
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12PM",
+            "end": "4PM"
+          }
+        ],
+        "location": "Omamori Charm Shop",
+        "desc": "Traditionally, omamori are Japanese amulets for good luck and protection. This hands-on workshop teaches you to make your own origami omamori charm for decorative purposes. Free packs are limited. Material fee (min $3) may be required when free packs run out. ",
+        "tags": []
+      },
+      {
+        "title": "When Anime Sells Out",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Have you ever said to yourself, 'I like anime because at least animated characters can't sell out to the man like real actors'. One, that's a really weird thing to say and, two, you couldn't be more totally wrong. After all anime characters are some of the biggest corporate shills to ever exist. From Lupin Ill telling to you buy Esso gas to Doraemon pushing you to get a refrigerator from SHARP, there's almost nothing anime won't try to sell you. So come check out an hour of the best commercials featuring your favorite characters as they try their hardest to make your wallet just that little bit lighter. ",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Classrooms / Tutorials",
+    "events": [
+      {
+        "title": "Armor Making Basics",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "Want to learn how to make armour or accessories for your next cosplay? We cover beginner friendly methods and materials including foam and thermoplastics. Covers how to gather resources, plan out your pieces, properly size them, build them and paint them... then get them to the con and hopefully survive the day in them. ",
+        "tags": []
+      },
+      {
+        "title": "Bringing the Illustration to Life - Character Model Texturing with Digitrevx",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Workshop style panel demonstrating how Digitrevx likes to paint textures for 3d anime characters using illustration skills.",
+        "tags": []
+      },
+      {
+        "title": "Cosplay Makeup 101 with Fighting Dreamers Productions",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "From freckles to body-painting, join us as we explore tips and tricks in the world of cosplay makeup. You don't have to be an expert (we sure as heck aren't!) to learn some simple techniques, tricks and tips that will help you complete your next cosplay look! This panel welcomes beginners and makeup veterans alike!",
+        "tags": []
+      },
+      {
+        "title": "Cosplay Wig Styling with Fighting Dreamers Productions",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Wigs are hard! Join us as we delve into buying the right base, styling techniques, step-by-step styling processes, tips and tricks and more! This panel is open to anyone on the skill spectrum (newbies and veterans alike).properly size them, build them and paint them... then get them to the con and hopefully survive the day in them.",
+        "tags": []
+      },
+      {
+        "title": "Detailing Gunpla with Gundom Markers",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1PM",
+            "end": "2:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "A tutorial on Gundam markers that will help you raise the caliber of your model's finish from basic completion to advanced polish. Come join us to explore some of the more advanced uses of the Gundam Marker.",
+        "tags": []
+      },
+      {
+        "title": "Gunpla Building 101 and Apply Decals to Gunpla",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "This is the introductory class that will show you how to put together a kit, along with simple tips and tricks to make the most out of what you have on hand. We'll show you how to perfectly remove those nasty 4 spurs and what a difference a little marker and some water slide decals can really make!",
+        "tags": []
+      },
+      {
+        "title": "Gunpla Handpainting",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "2:15PM",
+            "end": "3:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "This class is for those of intermediate skill that really want to bring their kit building skills to the next level! If you have exhausted the possibilities with markers, let us show you what the pros do with painting! Painting is the same whether it's by brush or airbrush.",
+        "tags": []
+      },
+      {
+        "title": "Gunpla Photoshoot",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "10:30AM",
+            "end": "11:30AM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Your kit may be beautiful, but you can't show it off if it doesn't stand out! This class is for learning proper lighting and posing techniques to bring out the best side of your kits We'll be bringing in a portable light box for demonstration. Feel free to take it for a spin and really show off your finished work!",
+        "tags": []
+      },
+      {
+        "title": "Literal World of Colouring",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "7:30PM",
+            "end": "10:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Come and spend some time colouring and drawing in the Creation Station!",
+        "tags": []
+      },
+      {
+        "title": "Marker Colouring Demo with Baylee Jae",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Join artist and YouTuber Baylee Jae as she shares tips and tricks on using art markers in this real time demo.",
+        "tags": []
+      },
+      {
+        "title": "Pattern Draft - Drafting A Base Block",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "4PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Looking to draft your own patterns but don't have a base to start from? This panel is for you! This panel is for those who have the basic understanding of patterns and want to start making their own. This is a mini class on how to draft a Pattern Block, so get ready to learn while since you will be drafting along with us. Space is limited so first come first serve.",
+        "tags": []
+      },
+      {
+        "title": "Sewing a Tote Bag",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2:30PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Needing something to help you carry your goodies and essentials around the con? Do not worry - our sewing class is for you! In this beginners class we will learn how to make a classic tote bag, that meets your needs! Sewing machines and supplies are provide. You will have the full class to complete the tote bag but if you don't, fear not! We'll have instructions ready to help you complete it at home. Fabric and print choices are first come first serve so please come early to make sure you get ones you like.\n\nEntry fee - $20 CAD. ",
+        "tags": []
+      },
+      {
+        "title": "Sewing Basics / Understanding a Machine",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "4PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Trying to build up your basic sewing skills? We are here to help! This class will go over sewing machine basics, seam types and skills to get you started You will be learning about basic seams, different seam types, how to sew a zipper, some simple hand sewing stitches and creating seam samples. This is a great way to build a sewing sample book that most seamstresses have to reference later on. This is a step by step instructed class, so leaving in the middle or arriving late is not recommended. At the end you will walk away with 5 hand sewn samples, 8 machine stitch/seam samples and a booklet to go with all the samples Spots are limited so please come early. Class fees will be collected at the door by cash or credit.\n\nEntry fee - $35 CAD. ",
+        "tags": []
+      },
+      {
+        "title": "Top 5 Anime Art Mistakes and How to Avoid Them",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "5:30PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Creation Station",
+        "desc": "Could your drawings use a few tips? Join indie comic creators Achiru and Matt as they talk about the top five mistakes that artists make as they push their skills to the next level!",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Informative Panel",
+    "events": [
+      {
+        "title": "The Visual College of Art and Design presents Four Careers You Can Pursue If You Love Anime",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 3",
+        "desc": "It takes a lot of talented professionals to bring the world of anime together. With animators creating characters, game developers and VFX artists weaving together fantastical environments, and fashion designers bringing your favourites to life, there is a hive of activity behind-thescenes to build this amazing industry. And you could be a part of it with the right training.",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Guest Panels & Events",
+    "events": [
+      {
+        "title": "Akiba Night Rave FT DJ243, Marubeats, TeddyLoid, MAXBeat",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10PM",
+            "end": "1AM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Our official rave is back! Headlined by our special guest TeddyLoid, let loose and enjoy a night of dance and music!",
+        "tags": []
+      },
+      {
+        "title": "Anirevo Guest Meet and Greet",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Maid Cafe",
+        "desc": "Enjoy refreshments and light snacks while getting to know your favourite guests - some who have never met their fans up-close before! Guest Lineup: Marina Inoue, Kappei Yamaguchi, Satsuki Yukino, Hitomi Nabatame, TeddyLoid, Richard Ian Con, ProZD, Clifford Chapin, Sarah Wiedenheft, Baylee Jae, and Takeshi Takadera.\n\nTickets are limited! Visit our sales desk for more information.\n\nPremium Pass Holders: $25 | Regular Pass Holders: $35 | Non Pass Holders $60",
+        "tags": []
+      },
+      {
+        "title": "Baozi & Hana Tea Party Meet and Greet",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10AM",
+            "end": "11:30AM"
+          }
+        ],
+        "location": "Maid Cafe",
+        "desc": "Get to know Baozi and Hana at the exclusive Tea Party! This is an exclusive opportunity for fans to experience a special moment with the cosplay duo, all while enjoying a nice cup of tea.\n\nEvent Highlights: Food & Beverage, Tea Party Exclusive Souvenir, polaroid with Baozi & Hana, and chances to win special prizes.\n\nTickets are limited! Visit our Info Booth for more information.\n\nPremium Pass Holders $30 | Regular Pass Holders: $50 | Non Pass Holders $60",
+        "tags": []
+      },
+      {
+        "title": "Cosplay Makeup with Baozi & Hana",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "5PM",
+            "end": "6PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Learn how you can enhance your facial features with Baozi and Hana's live makeup demonstration!",
+        "tags": []
+      },
+      {
+        "title": "Creating Online Content for YouTube and Twitch with ProZD and Baylee Jae",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Ever wonder what it is like creating content for YouTube and Twitch? Get some insight from two very different types of content creators. Featuring our special guests ProZD and Baylee Jae.",
+        "tags": []
+      },
+      {
+        "title": "Hentai Sex Ed",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "10:30PM",
+            "end": "11:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Ever wondered if hentai can be a learning tool? What can you take away from it? These 'professionals' will be there to help you better understand sex ed through hentai. Stop in by and see what hentai can teach you.",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Jiggle Bounce Thrust",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "9:30PM",
+            "end": "10:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Join his Royal Highness of perversion, Hentai Cupcake, as he guides you through the wonderful world of ecchi and debauchery goodness! This late-night panel is for those brave souls who have been on this Earth for 18+ years only please!",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "Kyoukai no Rinne - Live Recording with Japanese Guests",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "4:30PM",
+            "end": "5:30PM"
+          }
+        ],
+        "location": "Main Events",
+        "desc": "Join Takeshi Takadera as he gives his expert critique and direction to Marina Inoue, Kappei Yamaguchi, Satsuki Yukino and Hitomi Nabatame, our esteemed voice actors guests visiting from Japan! They will be performing a live, mock recording of 'Kyoukai no Rinne' that you won't want to miss!",
+        "tags": []
+      },
+      {
+        "title": "Let's Play a Horror Game With Sarah Wiedenheft",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "11AM",
+            "end": "12PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Check out this live Let's Play with the voice of Tohru from Kobayashi's Dragon Maid, Sarah Wiedenheft! Show some moral support for Sarah does her best to get through a wonderfully scary game in an hour.",
+        "tags": []
+      },
+      {
+        "title": "Posing for Cosplay Photography with Baozi & Hana",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "6PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Join famous cosplay duo Baozi and Hana as they demonstrate how best to pose for cosplay photography.",
+        "tags": []
+      },
+      {
+        "title": "Scripted Chaos ft Sarah, Clifford, Richard, ProZD",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "7:30PM",
+            "end": "8:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Join Sarah Wiedenheft, Clifford Chapin, Richard Ian Cox and ProZD as they gather together and read scripts from anime, movies and television series; giving voice to characters they themselves may have never thought possible' Van Fanet as Sailor Pluto? Barbie as Darth Vader 7 Who knows what interesting combinations and ad-libbing will be cooked up? You DO NOT want to miss this!",
+        "tags": []
+      },
+      {
+        "title": "The 404s Present: The All-Ages Improvaganza",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "3:30PM",
+            "end": "4:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "Let The 404s kick off your Anirevo experience with this laugh-filled joyride. Using your suggestions, this fast-paced comedy troupe will create completely improvised scenes using every ounce of their anime knowledge to create a hilarious one-of-a-kind fandom experience.",
+        "tags": []
+      },
+      {
+        "title": "The 404s Present: The Good, The Bad, The Ugly!",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "8PM",
+            "end": "9PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Do you LOVE getting advice from strangers? Have a burning question only The 404s can answer? Let them assist you with their own twisted form of an advice panel. Their 'specialist' are ready to give you the type of advice you may (or may not) be searching for. So get ready for the real, hypothetical or just down right strange, but use their advice at your own discretion.",
+        "tags": [],
+        "age": 18
+      },
+      {
+        "title": "The 404s Present: The Improv League of Improvisors",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "3:30PM",
+            "end": "4:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "The 404s can get extremely competitive - and this show is the best place to see exactly how bad they can get. Join The 404s for a presentation of the lmprov League of Improvisors. Two teams battle it out in the improv arena to gain your votes. Which team will reign supreme? You decide in this unique comedy showdown.",
+        "tags": []
+      },
+      {
+        "title": "The 404s Present: The Missing Episode of ???",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "3:30PM",
+            "end": "4:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "You thought you've seen every episode, read every manga, heard every fan theory, but there are some things you were just not meant to see. Luckily, The 404s are here to recreate a Missing Episode of your favourite anime! Come watch and let The 404s know which anime you would like to see them make up on the spot.",
+        "tags": []
+      },
+      {
+        "title": "The Fictionals present Boom! Pow! The Manga & Anime Comedy Show!",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "7PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "The Fictionals are soaring into action with their Manga & Anime Comedy Show at Anirevo Summer 2018! From Attack On Titan to Sailor Moon, the comedians will be inspired to create new adventures on front of your very eyes! Plus you'll get a chance to join the fun and win some great prizes too. Join the fun at Anirevo!",
+        "tags": []
+      },
+      {
+        "title": "The Fictionals Present: Improv Against Humanity",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "2:30PM",
+            "end": "3:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Are you the Most Horrible Person at Anirevo Summer 2018 Prove it during lmprov Against Humanity, The Fictionals' live comedy game show! Sign up for your chance to play in the live CAH tournament, win sweet prizes, and enjoy laughs from some of Vancouver's finest comedians!",
+        "tags": []
+      },
+      {
+        "title": "The Fictionals Present: The Improvised Adventures of Anirevo Summer 2018",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12:30PM",
+            "end": "1:30PM"
+          }
+        ],
+        "location": "Blue Stage",
+        "desc": "`Join the fun as The Fictionals celebrate the celebrity guests, stories and epic cosplay from Anirevo Summer 2018! Enjoy the interactive improv comedy, plus lucky audience members will get a chance to jump onstage and win prizes!",
+        "tags": []
+      },
+      {
+        "title": "The Inuyasha Legacy LIVE with Special Guests",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "6PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Come join us as we discuss the legacy of the Inuyasha series. Get a new behind the scenes perspective from our special guests Kappei Yamaguchi, Satsuki Yukino and Richard Ian Con! This Anirevo exclusive panel will be a must see for any lnuyasha fan.",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Guest Questions & Answers",
+    "events": [
+      {
+        "title": "Baozi & Hana Variety Show",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "10AM",
+            "end": "11AM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Join our special guests Baozi & Hana in an Anirevo style variety show! Get to know them better in a series of interactive games and Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Clifford Chapin Variety Show",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Join our special guest Clifford Chapin, the voice of Bakugo from My Hero Academia, in an Anirevo style variety show! Get to know them better in a series of interactive games and Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Hitomi Nabatame Q&A",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "4PM",
+            "end": "5PM"
+          },
+          {
+            "date": "Sunday, Aug 5",
+            "start": "5PM",
+            "end": "6PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Join the seiyuu of Unchou Kan'u from Ikki Tousen in a fun filled Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Kappei Yamaguchi Q&A",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2:30PM",
+            "end": "3:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Join the Seiyuu of lnuyasha from lnuyasha, L from Death Note and Usopp from One Piece in a fun filled Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Marina Inoue Q&A",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "6:30PM",
+            "end": "7:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Join the Seiyuu of Armin Arlert from Attack on Titan and Yoko Littner from Gurren Lagann in a fun filled Q&A!",
+        "tags": []
+      },
+      {
+        "title": "ProZD Variety Show",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "2PM",
+            "end": "3PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Join our special guest ProZD in an Anirevo style variety show! Get to know them better in a series of interactive games and Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Richard Ian Cox Variety Show",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "5:30PM",
+            "end": "6:30PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Join our special guest Richard Ian Cox, the voice of lnuyasha, in an Anirevo style variety show! Get to know them better in a series of interactive games and Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Sarah Wiedenheft Variety Show",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "1PM",
+            "end": "2PM"
+          }
+        ],
+        "location": "Panel Room 2",
+        "desc": "Join our special guest Sarah Wiedenheft, the voice of Tohru from Kobayashi's Dragon Maid, in an Anirevo style variety show! Get to know them better in a series of interactive games and Q&A!",
+        "tags": []
+      },
+      {
+        "title": "Satsuki Yukino Q&A",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "11:30AM",
+            "end": "12:30PM"
+          }
+        ],
+        "location": "Panel Room 1",
+        "desc": "Join the seiyuu of Kagome Higurashi from lnuyasha and Yoruichi Shihoin from Bleach in a fun filled Q&A!",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Console Gaming",
+    "events": [
+      {
+        "title": "ARMS - Double Elimination Tournament (Bring your own switch and dock)",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12:30PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Tournament will be Bring Your Own Switch, so if you do not have a switch with the game, we cannot guarantee entry into the event.",
+        "tags": []
+      },
+      {
+        "title": "BlazBlue Central Fiction - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "4PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "What more could you want than a game stacked with giant swords, waifus, and beautiful 2D animations. Blazblue offers a classic fighting game experience with a wonderfully weeb exterior.",
+        "tags": []
+      },
+      {
+        "title": "BlazBlue Cross Tag Battle - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1PM",
+            "end": "4PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Blazblue Cross Tag Battle is physical evidence that everything can be made even better with the inclusion of RWBY characters Come play the newest edition of Blazblue with characters from the original series and many other franchises!",
+        "tags": []
+      },
+      {
+        "title": "Dance Dance Revolution (Stepmania) Tournament",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "3PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Dance like you've never danced before. Be sure to bring a water bottle to stay hydrated!",
+        "tags": []
+      },
+      {
+        "title": "Dragonball FighterZ - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "3PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "The game we've all been waiting for. Dragon Ball Z Fighters gives us an amazing tag team fighting game with everything a DBZ fan could ask for. Veteran or not, come out and compete.",
+        "tags": []
+      },
+      {
+        "title": "Hatsune Miku Project Diva Tournament",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "It wouldn't be an anime convention without a rhythm game, Miku, and J-pop. Well Hatsune Miku Project Diva has all of these elements put together in one solid experience!",
+        "tags": []
+      },
+      {
+        "title": "Mario Tennis Aces - Double Elimination Tournament (Bring your own switch and dock)",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "1:30PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Waluigi may not be in smash, but you can still have a ball by testing your skills with Mario Tennis Aces at Anirevo this year! Tournament will be Bring Your Own Switch, so if you do not have a switch with the game, we cannot guarantee entry into the event.",
+        "tags": []
+      },
+      {
+        "title": "Pokken Tournament DX - Double Elimination Tournament (Bring your own switch and dock)",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "11:30AM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Gotta Punch-em-All. Come play Pokkdn Tournament DX and use all your favourite Pokdmon to beat up all your least favourite Pokémon. Tournament will be Bring Your Own Switch, so if you do not have a switch with the game, we cannot guarantee entry into the event.",
+        "tags": []
+      },
+      {
+        "title": "Project M - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Project M isn't dead! At least not at Anirevo this summer. Project M is a fan-made smash brothers mod for Brawl that changes the games engine to be more like Melee, as well as tweaking the cast so that every character has a shot at winning.",
+        "tags": []
+      },
+      {
+        "title": "Puyo Tetris (Swap Mode) - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "1PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "Have you ever wondered what was better, blocks or blobs? Of course you haven't, but Puyo Tetils has the answer! Compete using either tetils or puyo to take down your opponents that could be using either. With simple but deep mechanics Puyo Tetris offers a great experience for both veterans and new players.",
+        "tags": []
+      },
+      {
+        "title": "Smash Wii U - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "12PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "SHOW YA MOVES in Smash 4 WiiU, the most recent of the franchise with a roster so big and ridiculous it looks like its straight out of a late 2000's Gamespot forum. Play with either the new pro-controller, the classic game cube, or even use a 305 as a controller if you're really feeling it.",
+        "tags": []
+      },
+      {
+        "title": "Street Fighter V - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "2PM",
+            "end": "6PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "The latest and greatest Street Fighter that doesn't have a 2 in its name, Street Fighter V will be at Anirevo. Veterans can put their combos to the test for first place, and for newer players - remember that hadouken is quarter circle punch, and spamming it is perfectly legal.",
+        "tags": []
+      },
+      {
+        "title": "Super Smash Brothers Melee - Double Elimination Tournament",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "12:30PM",
+            "end": "7PM"
+          }
+        ],
+        "location": "Console Gaming",
+        "desc": "The Nintendo classic is still alive and well, Super Smash Brothers Melee for the Nintendo game cube will be at Anirevo to put your multishines and wave dashes to the test. Come compete, or even spectate, and see that this fast paced fighter is so much more than fox only - final destination.",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "category": "Tabletop Gaming",
+    "events": [
+      {
+        "title": "Magic the Gathering Commander Meetup",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "2PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Meet-up for some commander at Anirevo this year! A fun casual format to be played with multiple people. Come and make new friends, or enemies, depending on what you bring to the table.",
+        "tags": []
+      },
+      {
+        "title": "Magic the Gathering Draft Signups",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "12PM",
+            "end": "4PM"
+          },
+          {
+            "date": "Saturday, Aug 4",
+            "start": "11AM",
+            "end": "3PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Magic the Gathering drafts will be open for signups Friday and Saturday. Drafting will start when a sign-up sheet has at least 8 players on it. We will be drafting Core Set 2019, with prize packs from the same set for people who perform well at the draft.\n\nEntry: $15 CAD.",
+        "tags": []
+      },
+      {
+        "title": "Magic the Gathering Modern Constructed (Proxies Legal)",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "3PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Anirevo will be having a Modern tournament for Magic the Gathering. And because the event is not sanctioned, we will be allowing proxies for anyone who wants to try out a new deck or is just missing a couple cards. Proxies must be in fully legible prints, no writing on pieces of paper please.\n\nEntry fee: $5 CAD.",
+        "tags": []
+      },
+      {
+        "title": "Pokemon TCG Forbidden Light SEALED, presented by Treasure Chest Collectibles",
+        "time": [
+          {
+            "date": "Saturday, Aug 4",
+            "start": "2PM",
+            "end": "6PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Don't have a deck, but still really wanting to sling some Pokdmon cards? Well you're in luck, because Treasure chest games will be hosting a Pokemon TCG Sealed event!\n\nEntry fee: $35 CAD.",
+        "tags": []
+      },
+      {
+        "title": "Pokemon TCG Standard Constructed, presented by Treasure Chest Collectibles",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "3PM",
+            "end": "8PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Get in the deck box, Nebby! Anirevo is hosting a Pokémon standard tournament, presented by Treasure Chest Collectibles! Entry is $5, with prize packs for top players.\n\nEntry fee: $5 CAD.",
+        "tags": []
+      },
+      {
+        "title": "Weiss Schwarz, presented by Treasure Chest Collectibles",
+        "time": [
+          {
+            "date": "Friday, Aug 3",
+            "start": "1PM",
+            "end": "6PM"
+          },
+          {
+            "date": "Saturday, Aug 4",
+            "start": "1PM",
+            "end": "6PM"
+          },
+          {
+            "date": "Sunday, Aug 5",
+            "start": "1PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Weiss Schwarz will be available for play every day during Anirevo! Friendly staff from Treasure Chest collectables will be there to tell new players about the game, and host matches between players.",
+        "tags": []
+      },
+      {
+        "title": "Yugioh Advanced Constructed, presented by Treasure Chest Collectibles",
+        "time": [
+          {
+            "date": "Sunday, Aug 5",
+            "start": "12PM",
+            "end": "5PM"
+          }
+        ],
+        "location": "Tabletop Gaming",
+        "desc": "Card games on motorcycles, except there aren't motor cycles, and instead its a constructed tournament for yugioh's advanced format. Sending your opponents to the shadow realm is discouraged, but not prohibited. Entry is $5, with prize packs for top players Presented by Treasure Chest Collectibles!\n\nEntry fee: $5 CAD.",
+        "tags": []
+      }
+    ]
+  }
+]
