@@ -3,19 +3,6 @@
     "category": "Official Contests",
     "events": [
       {
-        "title": "Test Event",
-        "time": [
-          {
-            "date": "Friday, Aug 3",
-            "start": "5AM",
-            "end": "6AM"
-          }
-        ],
-        "location": "Main Events",
-        "desc": "test. Very, perhaps scratch your head... It's all for the fun and creativity! Help decide who will win this year at this special event, or just come to kick back and watch some great videos!",
-        "tags": []
-      },
-      {
         "title": "AMV Contest",
         "time": [
           {
