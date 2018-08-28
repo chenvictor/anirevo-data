@@ -2,32 +2,32 @@
   {
     "purpose": "Main Events",
     "location": "Ballroom A",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Blue Stage",
     "location": "Vendor Hall",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Panel Room 1",
     "location": "Meeting Room 109",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Panel Room 2",
     "location": "Meeting Room 119",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Panel Room 3",
     "location": "Meeting Room 121",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Creation Station",
     "location": "Meeting Room 116",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Omamori Charm Shop",
@@ -36,12 +36,12 @@
   {
     "purpose": "Viewing Room 1",
     "location": "Meeting Room 111",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Viewing Room 2",
     "location": "Meeting Room 114",
-    "visible": true
+    "schedule": true
   },
   {
     "purpose": "Console Gaming",
