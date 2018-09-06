@@ -1,15 +1,15 @@
 [{
-  "category": "Test",
+  "category": "Category 1",
   "events": [{
-    "restriction": 18,
-    "location": "Other Location",
+    "location": "Test loc",
     "time": [{
       "date": "Friday, Aug 4",
-      "start": "2PM",
+      "start": "2:00PM",
       "end": "2:15PM"
     }],
-    "title": "Test",
-    "desc": "desc",
+    "title": "Test Event1",
+    "age": 13,
+    "desc": "desc. NEW and updated! :O",
     "tags": []
   }]
 }]

@@ -8,26 +8,25 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabLocationsContentController">
-   <children>
-      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabLocationsContentController">
+    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" />
-          <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="300.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0"/>
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="300.0"/>
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
         </rowConstraints>
-         <children>
-            <TextField fx:id="textFieldPurpose" onKeyTyped="#changed" GridPane.columnIndex="1" />
-            <TextField fx:id="textFieldLocation" onKeyTyped="#changed" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <CheckBox fx:id="checkBoxSchedule" mnemonicParsing="false" onAction="#changed" text="Schedule" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label text="Purpose" />
-            <Label text="Location" GridPane.rowIndex="1" />
-         </children>
-      </GridPane>
-   </children>
+        <TextField fx:id="textFieldPurpose" GridPane.columnIndex="1"/>
+        <TextField fx:id="textFieldLocation" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <CheckBox fx:id="checkBoxSchedule" mnemonicParsing="false" onAction="#changed" text="Schedule"
+                  GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2"/>
+        <Label text="Purpose"/>
+        <Label text="Location" GridPane.rowIndex="1"/>
+    </GridPane>
 </AnchorPane>

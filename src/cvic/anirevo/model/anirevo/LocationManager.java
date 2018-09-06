@@ -1,5 +1,8 @@
 package cvic.anirevo.model.anirevo;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -9,7 +12,7 @@ public class LocationManager implements Iterable<ArLocation>{
 
     private static LocationManager instance;
 
-    private List<ArLocation> locations;
+    private ObservableList<ArLocation> locations;
 
     public static LocationManager getInstance() {
         if(instance == null) {
@@ -19,7 +22,7 @@ public class LocationManager implements Iterable<ArLocation>{
     }
 
     private LocationManager() {
-        locations = new ArrayList<>();
+        locations = FXCollections.observableArrayList();
     }
 
     public ArLocation getLocation(String location) {
@@ -31,6 +34,10 @@ public class LocationManager implements Iterable<ArLocation>{
         ArLocation newLoc = new ArLocation(location);
         locations.add(newLoc);
         return newLoc;
+    }
+
+    public ObservableList<ArLocation> getLocations() {
+        return locations;
     }
 
     public int size() {

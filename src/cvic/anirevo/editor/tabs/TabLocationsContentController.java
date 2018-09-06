@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class TabLocationsContentController implements TabLocationsNavController.LocationsNavListener {
 
     private ArLocation mLocation;
@@ -15,8 +18,17 @@ public class TabLocationsContentController implements TabLocationsNavController.
     @FXML
     private CheckBox checkBoxSchedule;
 
+    private Timer timer;
+
     public void initialize() {
+        timer = new Timer();
         sync();
+        textFieldLocation.textProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
+        textFieldPurpose.textProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
     }
 
     private void saveLocation() {
@@ -37,17 +49,19 @@ public class TabLocationsContentController implements TabLocationsNavController.
 
     @FXML
     private void changed() {
+        timer.purge();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                saveLocation();
+            }
+        }, 500);
     }
 
     @Override
     public void itemSelected(ArLocation location) {
-        save(); //save the previous item
         mLocation = location;
         sync();
     }
 
-    @Override
-    public void save() {
-        saveLocation();
-    }
 }

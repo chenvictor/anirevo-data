@@ -1,25 +1,18 @@
 package cvic.anirevo.editor.tabs;
 
-import cvic.anirevo.Log;
-import cvic.anirevo.editor.DataPaths;
 import cvic.anirevo.editor.DragCell;
 import cvic.anirevo.editor.DragPane;
 import cvic.anirevo.model.anirevo.*;
-import cvic.anirevo.model.calendar.CalendarEvent;
-import cvic.anirevo.parser.EventParser;
-import cvic.anirevo.utils.JSONUtils;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
-public class TabEventsNavController implements SubController, ArEvent.TitleChangeListener {
+public class TabEventsNavController implements ArEvent.TitleChangeListener, CategoryPane.CatDragListener {
 
     private EventsNavListener mListener;
 
@@ -35,7 +28,6 @@ public class TabEventsNavController implements SubController, ArEvent.TitleChang
             }
             ArEvent event = newPane.getListView().getSelectionModel().getSelectedItem();
             mListener.itemSelected(event);
-            Platform.runLater(() -> newPane.getContent().requestFocus());
         });
         for (TitledPane pane : navAccordion.getPanes()) {
             CategoryPane catPane = (CategoryPane) pane;
@@ -54,7 +46,6 @@ public class TabEventsNavController implements SubController, ArEvent.TitleChang
         if (navAccordion.getPanes().size() != 0) {
             TitledPane pane = navAccordion.getPanes().get(0);
             navAccordion.setExpandedPane(pane);
-            Platform.runLater(() -> pane.getContent().requestFocus());
         }
         navAccordion.setContextMenu(getEmptyCategoryCtxMenu());
         navAccordion.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, event -> {
@@ -153,6 +144,7 @@ public class TabEventsNavController implements SubController, ArEvent.TitleChang
         ArCategory cat = new ArCategory(title);
         CategoryPane newPane = makeNewPane(cat);
         navAccordion.getPanes().add(idx, newPane);
+        CategoryManager.getInstance().addCategory(idx, cat);
     }
 
     private void addEvent(ListView<ArEvent> listView, int idx) {
@@ -192,7 +184,7 @@ public class TabEventsNavController implements SubController, ArEvent.TitleChang
     private CategoryPane makeNewPane(ArCategory cat) {
         ListView<ArEvent> catList = makeNewList(cat);
 
-        CategoryPane newPane = new CategoryPane(navAccordion, cat);
+        CategoryPane newPane = new CategoryPane(navAccordion, cat, TabEventsNavController.this);
         newPane.setListView(catList);
         newPane.setTitle(cat.getTitle());
         newPane.setCollapsible(true);
@@ -236,8 +228,8 @@ public class TabEventsNavController implements SubController, ArEvent.TitleChang
             cell.setContextMenu(getEventCtxMenu(cell));
             return cell;
         });
+        catList.setItems(cat.getEvents());
         for (ArEvent event : cat) {
-            catList.getItems().add(event);
             event.setListener(this);
         }
         if (catList.getItems().size() != 0) {
@@ -255,52 +247,14 @@ public class TabEventsNavController implements SubController, ArEvent.TitleChang
     }
 
     @Override
-    public void onSaveBtn() {
-        mListener.save();
-        JSONArray output = new JSONArray();
+    public void update() {
+        //synchronize order of CategoryManager and the panes
+        List<ArCategory> categories = new ArrayList<>();
         for (TitledPane pane : navAccordion.getPanes()) {
-            JSONObject catObject = new JSONObject();
             CategoryPane catPane = (CategoryPane) pane;
-            catObject.put("category", catPane.getTitle());
-            JSONArray eventsArray = new JSONArray();
-            for (ArEvent event : catPane.getListView().getItems()) {
-                JSONObject eventObject = new JSONObject();
-                eventObject.put("title", event.getTitle());
-                JSONArray timeblocks = new JSONArray();
-                for (CalendarEvent block : event.getTimeblocks()) {
-                    JSONObject time = new JSONObject();
-                    time.put("date", block.getDate().getName());
-                    time.put("start", block.getStartTime().shortString());
-                    time.put("end", block.getEndTime().shortString());
-                    timeblocks.put(time);
-                }
-                eventObject.put("time", timeblocks);
-                eventObject.put("location", event.getLocation());
-                eventObject.put("desc", event.getDesc());
-                eventObject.put("tags", new JSONArray());
-                if (event.getRestriction() != 0) {
-                    eventObject.put("restriction", event.getRestriction());
-                }
-                eventsArray.put(eventObject);
-            }
-            catObject.put("events", eventsArray);
-            output.put(catObject);
+            categories.add(catPane.getCategory());
         }
-        JSONUtils.writeJSON(DataPaths.JSON_EVENTS, output);
-    }
-
-    @Override
-    public void onLoadBtn() {
-        CategoryManager.getInstance().clear();
-        EventManager.getInstance().clear();
-        try {
-            EventParser.parseEvents(JSONUtils.getArray(DataPaths.JSON_EVENTS));
-            Log.notify("General", "Loaded data from file: " + DataPaths.JSON_EVENTS);
-        } catch (FileNotFoundException e) {
-            Log.notify("General", "File not found: " + DataPaths.JSON_EVENTS);
-            e.printStackTrace();
-        }
-        initialize();
+        CategoryManager.getInstance().setCategories(categories);
     }
 
     public interface EventsNavListener {

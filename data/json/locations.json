@@ -1,5 +1,4 @@
 [{
-  "schedule": true,
-  "purpose": "Location A",
-  "location": "Meeting Hall B"
+  "purpose": "Renamed",
+  "location": "And this"
 }]

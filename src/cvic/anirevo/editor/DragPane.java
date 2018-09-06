@@ -71,10 +71,15 @@ public class DragPane extends TitledPane {
                 success = true;
             }
             event.setDropCompleted(success);
+            onDragSuccessful();
             event.consume();
         });
 
         setOnDragDone(DragEvent::consume);
+    }
+
+    protected void onDragSuccessful() {
+
     }
 
     private void initLabel() {

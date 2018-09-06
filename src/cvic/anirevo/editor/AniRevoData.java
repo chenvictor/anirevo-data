@@ -1,6 +1,7 @@
 package cvic.anirevo.editor;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,7 @@ public class AniRevoData extends Application {
     private Controller mController;
 
     private EventHandler<WindowEvent> confirmCloseEventHandler = event -> {
-
+        Platform.exit();
     };
 
     @Override

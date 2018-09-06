@@ -32,6 +32,14 @@ public class CategoryManager implements Iterable<ArCategory>{
         return newCat;
     }
 
+    public void setCategories(List<ArCategory> categories) {
+        this.categories = categories;
+    }
+
+    public void addCategory(int idx, ArCategory cat) {
+        categories.add(idx, cat);
+    }
+
     public void clear() {
         categories.clear();
     }

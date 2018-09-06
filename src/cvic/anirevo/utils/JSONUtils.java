@@ -49,6 +49,7 @@ public class JSONUtils {
         writeFile(path, array.toString(INDENT));
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private static void writeFile(String path, String contents) {
         File file = new File(path);
         if (!file.exists()) {

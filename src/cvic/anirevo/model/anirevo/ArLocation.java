@@ -17,9 +17,15 @@ public class ArLocation implements Iterable<ArEvent>{
 
     private List<ArEvent> events;
 
+    private UpdateListener mListener;
+
     public ArLocation(String purpose) {
         this.purpose = purpose;
         events = new ArrayList<>();
+    }
+
+    public void setListener(UpdateListener listener) {
+        mListener = listener;
     }
 
     public void addEvent(ArEvent event) {
@@ -41,6 +47,9 @@ public class ArLocation implements Iterable<ArEvent>{
     }
 
     public void setPurpose(String purpose) {
+        if (mListener != null) {
+            mListener.update(this.purpose, purpose);
+        }
         this.purpose = purpose;
     }
 
@@ -70,4 +79,9 @@ public class ArLocation implements Iterable<ArEvent>{
     public Iterator<ArEvent> iterator() {
         return events.iterator();
     }
+
+    public interface UpdateListener {
+        void update(String oldName, String newName);
+    }
+
 }

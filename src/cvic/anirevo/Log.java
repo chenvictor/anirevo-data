@@ -12,6 +12,7 @@ public class Log {
     public static void notify(String tag, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, message);
         alert.setTitle(tag);
+        alert.setHeaderText(null);
         alert.show();
     }
 

@@ -1,12 +1,11 @@
 package cvic.anirevo.editor;
 
+import cvic.anirevo.Log;
 import cvic.anirevo.editor.tabs.*;
 import cvic.anirevo.model.anirevo.*;
+import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.DateManager;
-import cvic.anirevo.parser.EventParser;
-import cvic.anirevo.parser.GuestParser;
-import cvic.anirevo.parser.InfoParser;
-import cvic.anirevo.parser.LocationParser;
+import cvic.anirevo.parser.*;
 import cvic.anirevo.utils.JSONUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,8 +26,6 @@ public class Controller {
     @FXML
     private Tab tabGeneral, tabLocations, tabEvents, tabGuests;
 
-    private SubController subController;
-
     public void initialize() {
         loadAll();
         tabChanged();
@@ -46,36 +43,23 @@ public class Controller {
         } else if (tabEvents.isSelected()) {
             loadTab("tabs/tab_nav_events.fxml", "tabs/tab_content_events.fxml");
         } else if (tabGuests.isSelected()) {
-            tabGueSelect();
+            loadTab("tabs/tab_nav_guests.fxml", "tabs/tab_content_guests.fxml");
         }
     }
 
     public void onSave() {
-        if (subController != null) {
-            subController.onSaveBtn();
-        }
+        Unparser.info();
+        Unparser.locations();
+        Unparser.events();
+        Log.notify("Anirevo-data", "Data saved");
     }
 
     public void onLoad() {
-        if (subController != null) {
-            subController.onLoadBtn();
-        }
+        loadAll();
+        Log.notify("Anirevo-data", "Data loaded");
     }
 
     private void loadTab(String navFXML, String contentFXML) {
-//        if (ChangeDetector.isChanged()) {
-//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Changes may not have been saved! Save before switching tabs?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
-//
-//            alert.showAndWait();
-//            if (alert.getResult() == ButtonType.CANCEL) {
-//                //Cancel closing the window
-//                return;
-//            } else if (alert.getResult() == ButtonType.YES) {
-//                onSave();
-//            }
-//            ChangeDetector.setSaved();
-//        }
-        subController = null;
         Node node;
         Object navController = null;
         Object contentController;
@@ -84,9 +68,6 @@ public class Controller {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(navFXML));
                 node = loader.load();
                 navController = loader.getController();
-                if (subController == null && navController instanceof SubController) {
-                    subController = (SubController) navController;
-                }
                 navPane.getChildren().setAll(node);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -99,9 +80,6 @@ public class Controller {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(contentFXML));
                 node = loader.load();
                 contentController = loader.getController();
-                if (subController == null && contentController instanceof SubController) {
-                    subController = (SubController) contentController;
-                }
                 if (navController != null) {
                     if (navController instanceof TabLocationsNavController) {
                         ((TabLocationsNavController) navController).setListener((TabLocationsContentController) contentController);
@@ -115,12 +93,7 @@ public class Controller {
             }
         } else {
             contentPane.getChildren().clear();
-            subController = null;
         }
-    }
-
-    private void tabGueSelect() {
-        System.out.println("Guests Tab");
     }
 
     private void loadAll() {
@@ -159,6 +132,41 @@ public class Controller {
 
         //reset tab
         tabChanged();
+    }
+
+    @FXML
+    private void printStatus() {
+        //printDateManager();
+        //printLocationManager();
+        //printCategoryManager();
+    }
+
+    private void printDateManager() {
+        System.out.println("Date Manager");
+        System.out.println("Year: " + DateManager.getInstance().getYear());
+        System.out.println("Dates:");
+        for (CalendarDate date : DateManager.getInstance().getDates()) {
+            System.out.println("  -" + date.getName());
+        }
+    }
+
+    private void printLocationManager() {
+        System.out.println("Location Manager");
+        System.out.println("Locations:");
+        for (ArLocation loc : LocationManager.getInstance()) {
+            System.out.println(loc.getPurpose() + " - " + loc.getLocation() + (loc.isSchedule() ? " sched" : ""));
+        }
+    }
+
+    private void printCategoryManager() {
+        System.out.println("Category Manager");
+        System.out.println("Categories:");
+        for (ArCategory cat : CategoryManager.getInstance()) {
+            System.out.println("  " + cat.getTitle() + ":");
+            for (ArEvent event : cat) {
+                System.out.println("  -" + event.getTitle());
+            }
+        }
     }
 
 }

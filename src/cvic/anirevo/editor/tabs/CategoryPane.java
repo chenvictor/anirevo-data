@@ -3,17 +3,26 @@ package cvic.anirevo.editor.tabs;
 import cvic.anirevo.editor.DragPane;
 import cvic.anirevo.model.anirevo.ArCategory;
 import cvic.anirevo.model.anirevo.ArEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.ListView;
+import javafx.scene.input.DragEvent;
 
 public class CategoryPane extends DragPane {
 
     private final ArCategory category;
     private ListView<ArEvent> listView;
+    private CatDragListener mListener;
 
-    public CategoryPane(Accordion parent, ArCategory category) {
+    public CategoryPane(Accordion parent, ArCategory category, CatDragListener listener) {
         super(parent);
         this.category = category;
+        mListener = listener;
+    }
+
+    @Override
+    protected void onDragSuccessful() {
+        mListener.update();
     }
 
     public void setListView(ListView<ArEvent> listView) {
@@ -34,4 +43,11 @@ public class CategoryPane extends DragPane {
         super.setTitle(title);
         category.setTitle(title);
     }
+
+    public interface CatDragListener {
+
+        void update();
+
+    }
+
 }

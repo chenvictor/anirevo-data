@@ -1,22 +1,19 @@
 package cvic.anirevo.editor.tabs;
 
-import cvic.anirevo.Log;
-import cvic.anirevo.editor.DataPaths;
 import cvic.anirevo.editor.DragCell;
+import cvic.anirevo.model.anirevo.ArEvent;
 import cvic.anirevo.model.anirevo.ArLocation;
+import cvic.anirevo.model.anirevo.EventManager;
 import cvic.anirevo.model.anirevo.LocationManager;
-import cvic.anirevo.parser.LocationParser;
-import cvic.anirevo.utils.JSONUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
+public class TabLocationsNavController implements ArLocation.UpdateListener{
 
-public class TabLocationsNavController implements SubController {
+    @FXML
+    private ListView<ArLocation> listViewLocationsNav;
 
     private LocationsNavListener mListener;
 
@@ -28,13 +25,10 @@ public class TabLocationsNavController implements SubController {
         }
     }
 
-    @FXML
-    private ListView<ArLocation> listViewLocationsNav;
-
     public void initialize() {
         listViewLocationsNav.setContextMenu(getBaseCtxMenu());
         listViewLocationsNav.setCellFactory(lv -> {
-            DragCell cell = new DragCell<ArLocation>() {
+            DragCell<ArLocation> cell = new DragCell<ArLocation>() {
                 @Override
                 protected void updateItem(ArLocation item, boolean empty) {
                     super.updateItem(item, empty);
@@ -42,13 +36,14 @@ public class TabLocationsNavController implements SubController {
                         setText(null);
                     } else {
                         setText(item.getPurpose());
+                        item.setListener(TabLocationsNavController.this);
                     }
                 }
             };
             cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
                 if (!cell.isEmpty()) {
                     //select
-                    mListener.itemSelected((ArLocation) cell.getItem());
+                    mListener.itemSelected(cell.getItem());
                 }
             });
             cell.setContextMenu(getCtxMenu(cell));
@@ -61,10 +56,7 @@ public class TabLocationsNavController implements SubController {
             cell.setMaxWidth(Control.USE_PREF_SIZE);
             return cell;
         });
-        listViewLocationsNav.getItems().clear();
-        for (ArLocation loc : LocationManager.getInstance()) {
-            listViewLocationsNav.getItems().add(loc);
-        }
+        listViewLocationsNav.setItems(LocationManager.getInstance().getLocations());
     }
 
     private ContextMenu getCtxMenu(ListCell cell) {
@@ -111,39 +103,19 @@ public class TabLocationsNavController implements SubController {
     }
 
     @Override
-    public void onSaveBtn() {
-        mListener.save(); //Save the content first
-        JSONArray output = new JSONArray();
-        for (ArLocation loc : listViewLocationsNav.getItems()) {
-            JSONObject locObj = new JSONObject();
-            locObj.put("purpose", loc.getPurpose());
-            locObj.put("location", loc.getLocation());
-            if (loc.isSchedule()) {
-                locObj.put("schedule", loc.isSchedule());
+    public void update(String oldName, String newName) {
+        listViewLocationsNav.refresh();
+        //rename any events with the old location name
+        for (ArEvent event : EventManager.getInstance()) {
+            if (event.getLocation().equals(oldName)) {
+                event.setLocation(newName);
             }
-            output.put(locObj);
         }
-        JSONUtils.writeJSON(DataPaths.JSON_LOCATIONS, output);
-    }
-
-    @Override
-    public void onLoadBtn() {
-        LocationManager.getInstance().clear();
-        try {
-            LocationParser.parseLocs(JSONUtils.getArray(DataPaths.JSON_LOCATIONS));
-            Log.notify("General", "Loaded data from file: " + DataPaths.JSON_LOCATIONS);
-        } catch (FileNotFoundException e) {
-            Log.notify("General", "File not found: " + DataPaths.JSON_LOCATIONS);
-            e.printStackTrace();
-        }
-        initialize();
     }
 
     public interface LocationsNavListener {
 
         void itemSelected(ArLocation location);
-
-        void save();
 
     }
 

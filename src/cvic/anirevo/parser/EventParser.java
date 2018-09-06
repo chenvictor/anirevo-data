@@ -1,17 +1,11 @@
 package cvic.anirevo.parser;
 
 import cvic.anirevo.Log;
+import cvic.anirevo.model.anirevo.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cvic.anirevo.model.anirevo.AgeRestriction;
-import cvic.anirevo.model.anirevo.ArCategory;
-import cvic.anirevo.model.anirevo.ArEvent;
-import cvic.anirevo.model.anirevo.CategoryManager;
-import cvic.anirevo.model.anirevo.EventManager;
-import cvic.anirevo.model.anirevo.LocationManager;
-import cvic.anirevo.model.anirevo.TagManager;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.CalendarEvent;
 import cvic.anirevo.model.calendar.DateManager;

@@ -22,29 +22,24 @@
     </rowConstraints>
     <MenuBar>
         <Menu mnemonicParsing="false" text="File">
-            <items>
-                <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save" />
-                <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Load" />
-            </items>
+            <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save"/>
+            <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Load"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
-            <items>
-                <MenuItem mnemonicParsing="false" text="About" />
-            </items>
+            <MenuItem mnemonicParsing="false" text="About"/>
+            <MenuItem mnemonicParsing="false" onAction="#printStatus" text="Debug Status"/>
         </Menu>
     </MenuBar>
-    <TabPane minHeight="30.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
-      <tabs>
-          <Tab fx:id="tabGeneral" closable="false" onSelectionChanged="#tabChanged" text="General" />
-          <Tab fx:id="tabLocations" closable="false" onSelectionChanged="#tabChanged" text="Locations" />
-          <Tab fx:id="tabEvents" closable="false" onSelectionChanged="#tabChanged" text="Events" />
-          <Tab fx:id="tabGuests" closable="false" onSelectionChanged="#tabChanged" text="Guests" />
-      </tabs>
+    <TabPane minHeight="30.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
+             GridPane.vgrow="NEVER">
+        <Tab fx:id="tabGeneral" closable="false" onSelectionChanged="#tabChanged" text="General"/>
+        <Tab fx:id="tabLocations" closable="false" onSelectionChanged="#tabChanged" text="Locations"/>
+        <Tab fx:id="tabEvents" closable="false" onSelectionChanged="#tabChanged" text="Events"/>
+        <Tab fx:id="tabGuests" closable="false" onSelectionChanged="#tabChanged" text="Guests"/>
     </TabPane>
-    <SplitPane dividerPositions="0.29797979797979796" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
-      <items>
-          <AnchorPane fx:id="navPane" maxWidth="200.0" minHeight="0.0" minWidth="50.0" />
-          <AnchorPane fx:id="contentPane" minHeight="0.0" minWidth="0.0" />
-      </items>
+    <SplitPane dividerPositions="0.29797979797979796" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"
+               GridPane.vgrow="ALWAYS">
+        <AnchorPane fx:id="navPane" maxWidth="200.0" minHeight="0.0" minWidth="50.0"/>
+        <AnchorPane fx:id="contentPane" minHeight="0.0" minWidth="0.0"/>
     </SplitPane>
 </GridPane>

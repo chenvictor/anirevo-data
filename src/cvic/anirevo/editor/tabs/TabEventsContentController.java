@@ -35,7 +35,7 @@ public class TabEventsContentController implements TabEventsNavController.Events
     private ChoiceBox<Integer> choiceAge;
 
     @FXML
-    private ChoiceBox<String> choiceBoxLocation;
+    private ChoiceBox<Integer> choiceBoxLocation;
 
     @FXML
     private TextArea textAreaDescription;
@@ -45,18 +45,33 @@ public class TabEventsContentController implements TabEventsNavController.Events
 
     private ObservableList<CalendarEvent> timeblocks = FXCollections.observableArrayList();
 
+    private Timer timer;
+
     public void initialize() {
+        timer = new Timer();
         SortedList<CalendarEvent> sortedEvents = new SortedList<>(timeblocks);
         sortedEvents.setComparator(Comparator.comparing(CalendarEvent::toString));
         listViewTimeBlocks.setItems(sortedEvents);
         initChoiceBox();
         initListView();
         sync();
+        textFieldTitle.textProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
+        textFieldLocation.textProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
+        textAreaDescription.textProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
     }
 
     private void initChoiceBox() {
         choiceAge.getItems().addAll(0, 13, 18);
         choiceAge.getSelectionModel().select(0);
+        choiceAge.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
         choiceAge.setConverter(new StringConverter<Integer>() {
             @Override
             public String toString(Integer object) {
@@ -78,24 +93,39 @@ public class TabEventsContentController implements TabEventsNavController.Events
                 }
             }
         });
-        for (ArLocation loc : LocationManager.getInstance()) {
-            choiceBoxLocation.getItems().add(loc.getPurpose());
+        for (int i = 0; i < LocationManager.getInstance().getLocations().size(); i++) {
+            choiceBoxLocation.getItems().add(i);
         }
-        choiceBoxLocation.getItems().add("Other");
+        choiceBoxLocation.getItems().add(-1);
+        choiceBoxLocation.setConverter(new StringConverter<Integer>() {
+            @Override
+            public String toString(Integer object) {
+                if (object == -1) {
+                    return "Other";
+                }
+                return LocationManager.getInstance().getLocation(object).getPurpose();
+            }
+
+            @Override
+            public Integer fromString(String string) {
+                if (string.equals("Other")) {
+                    return -1;
+                }
+                return LocationManager.getInstance().getLocations().indexOf(LocationManager.getInstance().getLocation(string));
+            }
+        });
         choiceBoxLocation.getSelectionModel().select(0);
         choiceBoxLocation.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            String val = choiceBoxLocation.getSelectionModel().getSelectedItem();
-            if (val == null) {
-                return;
-            }
-            if (val.equals("Other")) {
+            int val = choiceBoxLocation.getSelectionModel().getSelectedItem();
+            if (val == -1) {
                 textFieldLocation.setText("");
                 textFieldLocation.requestFocus();
                 textFieldLocation.setDisable(false);
             } else {
-                textFieldLocation.setText(newValue);
+                textFieldLocation.setText(LocationManager.getInstance().getLocation(val).getPurpose());
                 textFieldLocation.setDisable(true);
             }
+            changed();
         });
     }
 
@@ -254,16 +284,29 @@ public class TabEventsContentController implements TabEventsNavController.Events
         }
     }
 
+    private void changed() {
+        timer.purge();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                saveEvent();
+            }
+        }, 500);
+    }
+
     private void sync() {
         if (textFieldTitle != null) {
             timeblocks.clear();
             if (mEvent != null) {
                 setDisable(false);
                 textFieldTitle.setText(mEvent.getTitle());
-                if (choiceBoxLocation.getItems().contains(mEvent.getLocation())) {
-                    choiceBoxLocation.getSelectionModel().select(mEvent.getLocation());
+                int locIdx = getLocIndex(mEvent.getLocation());
+                choiceBoxLocation.getSelectionModel().select(getLocIndex(mEvent.getLocation()));
+                textFieldLocation.setText(mEvent.getLocation());
+                if (locIdx == getNumLocs()) {
+                    textFieldLocation.setDisable(false);
                 } else {
-                    choiceBoxLocation.getSelectionModel().select(choiceBoxLocation.getItems().size() - 1);
+                    textFieldLocation.setDisable(true);
                 }
                 textAreaDescription.setText(mEvent.getDesc());
                 choiceAge.getSelectionModel().select(getIndex(mEvent.getRestriction()));
@@ -306,5 +349,21 @@ public class TabEventsContentController implements TabEventsNavController.Events
     @Override
     public void save() {
         saveEvent();
+    }
+
+    private int getLocIndex(String purpose) {
+        LocationManager manager = LocationManager.getInstance();
+        int idx = 0;
+        for (ArLocation loc : manager) {
+            if (loc.getPurpose().equals(purpose)) {
+                return idx;
+            }
+            idx++;
+        }
+        return idx;
+    }
+
+    private int getNumLocs() {
+        return LocationManager.getInstance().size();
     }
 }

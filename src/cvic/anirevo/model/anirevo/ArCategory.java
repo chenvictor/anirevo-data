@@ -1,8 +1,9 @@
 package cvic.anirevo.model.anirevo;
 
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.Iterator;
-import java.util.List;
 
 public class ArCategory implements Iterable<ArEvent>{
 
@@ -12,11 +13,15 @@ public class ArCategory implements Iterable<ArEvent>{
 
     private String title;
 
-    private List<ArEvent> events;
+    private ObservableList<ArEvent> events;
 
     public ArCategory(String title) {
         this.title = title;
-        events = new ArrayList<>();
+        events = FXCollections.observableArrayList();
+    }
+
+    public ObservableList<ArEvent> getEvents() {
+        return events;
     }
 
     public void addEvent(ArEvent event) {

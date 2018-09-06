@@ -1,23 +1,18 @@
 package cvic.anirevo.editor.tabs;
 
-import cvic.anirevo.Log;
-import cvic.anirevo.editor.DataPaths;
 import cvic.anirevo.editor.DragCell;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.DateManager;
-import cvic.anirevo.parser.InfoParser;
-import cvic.anirevo.utils.JSONUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
 import java.util.Optional;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class TabGeneralContentController implements SubController {
+public class TabGeneralContentController {
 
     @FXML
     private TextField field_year;
@@ -25,8 +20,14 @@ public class TabGeneralContentController implements SubController {
     @FXML
     private ListView<CalendarDate> list_dates;
 
+    private Timer timer;
+
     public void initialize() {
+        timer = new Timer();
         field_year.setText(String.valueOf(DateManager.getInstance().getYear()));
+        field_year.textProperty().addListener((observable, oldValue, newValue) -> {
+            changed();
+        });
         list_dates.setContextMenu(getBaseCtxMenu());
         list_dates.setCellFactory(lv -> {
             DragCell<CalendarDate> cell = new DragCell<CalendarDate>() {
@@ -92,38 +93,18 @@ public class TabGeneralContentController implements SubController {
 
     @FXML
     private void changed() {
+        timer.purge();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    int year = Integer.parseInt(field_year.getText());
+                    DateManager.getInstance().setYear(year);
+                } catch (Exception ignored) {
 
-    }
-
-    @Override
-    public void onSaveBtn() {
-        DateManager dateManager = DateManager.getInstance();
-        dateManager.clear();
-        for (CalendarDate date : list_dates.getItems()) {
-            dateManager.addDate(date);
-        }
-        dateManager.setYear(Integer.parseInt(field_year.getText()));
-        JSONObject output = new JSONObject();
-        output.put("year", dateManager.getYear());
-        JSONArray dates = new JSONArray();
-        for (CalendarDate date : dateManager) {
-            dates.put(date.getName());
-        }
-        output.put("dates", dates);
-        JSONUtils.writeJSON(DataPaths.JSON_INFO, output);
-    }
-
-    @Override
-    public void onLoadBtn() {
-        DateManager.getInstance().clear();
-        try {
-            InfoParser.parseInfo(JSONUtils.getObject(DataPaths.JSON_INFO));
-            Log.notify("General", "Loaded data from file: " + DataPaths.JSON_INFO);
-        } catch (FileNotFoundException e) {
-            Log.notify("General", "File not found: " + DataPaths.JSON_INFO);
-            e.printStackTrace();
-        }
-        initialize();
+                }
+            }
+        }, 500);
     }
 
     private void addDate(int idx) {
