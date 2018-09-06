@@ -1,0 +1,15 @@
+[{
+  "category": "Test",
+  "events": [{
+    "restriction": 18,
+    "location": "Other Location",
+    "time": [{
+      "date": "Friday, Aug 4",
+      "start": "2PM",
+      "end": "2:15PM"
+    }],
+    "title": "Test",
+    "desc": "desc",
+    "tags": []
+  }]
+}]

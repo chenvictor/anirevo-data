@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints minHeight="50.0" />
+    </rowConstraints>
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save" />
+                <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Load" />
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <items>
+                <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+        </Menu>
+    </MenuBar>
+    <TabPane minHeight="30.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+      <tabs>
+          <Tab fx:id="tabGeneral" closable="false" onSelectionChanged="#tabChanged" text="General" />
+          <Tab fx:id="tabLocations" closable="false" onSelectionChanged="#tabChanged" text="Locations" />
+          <Tab fx:id="tabEvents" closable="false" onSelectionChanged="#tabChanged" text="Events" />
+          <Tab fx:id="tabGuests" closable="false" onSelectionChanged="#tabChanged" text="Guests" />
+      </tabs>
+    </TabPane>
+    <SplitPane dividerPositions="0.29797979797979796" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+      <items>
+          <AnchorPane fx:id="navPane" maxWidth="200.0" minHeight="0.0" minWidth="50.0" />
+          <AnchorPane fx:id="contentPane" minHeight="0.0" minWidth="0.0" />
+      </items>
+    </SplitPane>
+</GridPane>
