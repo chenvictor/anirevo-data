@@ -51,6 +51,7 @@ public class Controller {
         Unparser.info();
         Unparser.locations();
         Unparser.events();
+        Unparser.guests();
         Log.notify("Anirevo-data", "Data saved");
     }
 
@@ -85,6 +86,8 @@ public class Controller {
                         ((TabLocationsNavController) navController).setListener((TabLocationsContentController) contentController);
                     } else if (navController instanceof TabEventsNavController) {
                         ((TabEventsNavController) navController).setListener((TabEventsContentController) contentController);
+                    } else if (navController instanceof TabGuestsNavController) {
+                        ((TabGuestsNavController) navController).setListener((TabGuestsContentController) contentController);
                     }
                 }
                 contentPane.getChildren().setAll(node);

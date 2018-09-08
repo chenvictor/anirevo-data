@@ -6,18 +6,30 @@ import java.util.Set;
 
 public class ArGuest {
 
-    private final int id;
-
-    private final String name;
+    private String name;
     private String title;
     private String japanese;
 
+    private String portraitPath;
+
     private Set<ArEvent> events;
 
-    ArGuest(String name, int id) {
-        this.id = id;
+    private ChangeListener mListener;
+
+    public ArGuest(String name) {
         this.name = name;
         events = new HashSet<>();
+    }
+
+    public void setListener(ChangeListener listener) {
+        mListener = listener;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+        if (mListener != null) {
+            mListener.update();
+        }
     }
 
     public String getName() {
@@ -62,7 +74,16 @@ public class ArGuest {
         this.japanese = japanese;
     }
 
-    public int getId() {
-        return id;
+    public String getPortraitPath() {
+        return portraitPath;
     }
+
+    public void setPortraitPath(String portraitPath) {
+        this.portraitPath = portraitPath;
+    }
+
+    public interface ChangeListener {
+        void update();
+    }
+
 }

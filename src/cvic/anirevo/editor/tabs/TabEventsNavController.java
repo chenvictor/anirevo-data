@@ -149,6 +149,7 @@ public class TabEventsNavController implements ArEvent.TitleChangeListener, Cate
 
     private void addEvent(ListView<ArEvent> listView, int idx) {
         ArEvent event = new ArEvent("untitled");
+        EventManager.getInstance().addEvent(event); //add to the event manager for consistency
         listView.getItems().add(idx, event);
         listView.getSelectionModel().select(idx);
         mListener.itemSelected(event);

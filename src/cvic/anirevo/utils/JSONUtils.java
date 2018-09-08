@@ -1,6 +1,5 @@
 package cvic.anirevo.utils;
 
-import cvic.anirevo.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,7 +11,7 @@ public class JSONUtils {
     private static final int INDENT = 2;
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
-    public static String getString(String path) throws FileNotFoundException{
+    private static String getString(String path) throws FileNotFoundException{
         StringBuilder json = new StringBuilder();
         String line;
         if (!(new File(path).exists())) {
@@ -68,7 +67,6 @@ public class JSONUtils {
             bufferedWriter.write(contents);
             bufferedWriter.close();
             writer.close();
-            Log.notify("JSON Utils", "Wrote to file: " + path);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -32,10 +32,18 @@ public class Unparser {
         CategoryManager manager = CategoryManager.getInstance();
         JSONArray output = new JSONArray();
         for (ArCategory cat : manager) {
-            JSONObject catObject = objectify(cat);
-            output.put(catObject);
+            output.put(objectify(cat));
         }
         JSONUtils.writeJSON(DataPaths.JSON_EVENTS, output);
+    }
+
+    public static void guests() {
+        GuestManager manager = GuestManager.getInstance();
+        JSONArray output = new JSONArray();
+        for (ArGuest guest : manager) {
+            output.put(objectify(guest));
+        }
+        JSONUtils.writeJSON(DataPaths.JSON_GUESTS, output);
     }
 
     //Arrayifiers
@@ -98,6 +106,19 @@ public class Unparser {
             locObject.put("schedule", true);
         }
         return locObject;
+    }
+
+    private static JSONObject objectify(ArGuest guest) {
+        JSONObject guestObject = new JSONObject();
+        guestObject.put("name", guest.getName());
+        guestObject.put("title", guest.getTitle());
+        if (guest.getJapanese() != null && guest.getJapanese().length() != 0) {
+            guestObject.put("japanese", guest.getJapanese());
+        }
+        if (guest.getPortraitPath() != null && guest.getPortraitPath().length() != 0) {
+            guestObject.put("image", guest.getPortraitPath());
+        }
+        return guestObject;
     }
 
 }

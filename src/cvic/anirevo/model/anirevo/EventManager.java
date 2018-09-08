@@ -29,6 +29,10 @@ public class EventManager implements Iterable<ArEvent>{
         return events.get(id);
     }
 
+    public void addEvent(ArEvent event) {
+        events.add(event);
+    }
+
     public ArEvent getEvent(String title) {
         for (ArEvent event : events) {
             if (event.getTitle().equals(title)) {

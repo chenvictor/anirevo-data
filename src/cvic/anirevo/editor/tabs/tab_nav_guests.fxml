@@ -4,4 +4,4 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<ListView fx:id="listViewGuestsNav" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabGuestsContentController" />
+<ListView fx:id="listViewGuestsNav" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabGuestsNavController" />

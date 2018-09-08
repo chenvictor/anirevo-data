@@ -36,6 +36,10 @@ public class GuestParser {
             String japanese = guest.getString("japanese");
             arGuest.setJapanese(japanese);
         }
+        if (guest.has("image")) {
+            String image = guest.getString("image");
+            arGuest.setPortraitPath(image);
+        }
     }
 
 }

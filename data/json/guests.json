@@ -1,33 +1,40 @@
 [
   {
-    "name": "Kappei Yamaguchi",
-    "title": "Voice Actor",
-    "japanese": "山口勝平"
-  },
-  {
-    "name": "Marina Inoue",
-    "title": "Voice Actress",
-    "japanese": "井麻里奈"
-  },
-  {
-    "name": "Satsuki Yukino",
-    "title": "Voice Actress",
-    "japanese": "ゆきの　さつき"
-  },
-  {
-    "name": "Hitomi Nabatame",
-    "title": "Voice Actress",
-    "japanese": "生天目仁美"
-  },
-  {
+    "image": "guest4.jpg",
     "name": "Teddyloid",
     "title": "Music Producer"
   },
   {
+    "image": "guest1.jpg",
+    "japanese": "井麻里奈",
+    "name": "Marina Inoue",
+    "title": "Voice Actress"
+  },
+  {
+    "image": "guest0.jpg",
+    "japanese": "山口勝平",
+    "name": "Kappei Yamaguchi",
+    "title": "Voice Actor"
+  },
+  {
+    "image": "guest2.jpg",
+    "japanese": "ゆきの　さつき",
+    "name": "Satsuki Yukino",
+    "title": "Voice Actress"
+  },
+  {
+    "image": "guest3.jpg",
+    "japanese": "生天目仁美",
+    "name": "Hitomi Nabatame",
+    "title": "Voice Actress"
+  },
+  {
+    "image": "guest5.jpg",
     "name": "ProZD",
     "title": "Youtuber"
   },
   {
+    "image": "approve_1.jpg",
     "name": "Baozi & Hana",
     "title": "Cosplayers"
   },

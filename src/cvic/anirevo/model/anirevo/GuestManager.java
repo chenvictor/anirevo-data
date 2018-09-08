@@ -1,12 +1,12 @@
 package cvic.anirevo.model.anirevo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import cvic.anirevo.exceptions.InvalidIdException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class GuestManager {
+import java.util.Iterator;
+
+public class GuestManager implements Iterable<ArGuest>{
 
     /**
      * Singleton Manager to keep track of ArGuests
@@ -14,7 +14,7 @@ public class GuestManager {
 
     private static GuestManager instance;
 
-    private List<ArGuest> guests;
+    private ObservableList<ArGuest> guests;
 
     public static GuestManager getInstance() {
         if (instance == null) {
@@ -24,7 +24,7 @@ public class GuestManager {
     }
 
     private GuestManager() {
-        guests = new ArrayList<>();
+        guests = FXCollections.observableArrayList();
     }
 
     public ArGuest getGuest(int id) throws InvalidIdException {
@@ -39,13 +39,13 @@ public class GuestManager {
                 return guest;
             }
         }
-        ArGuest newGuest = new ArGuest(name, guests.size());
+        ArGuest newGuest = new ArGuest(name);
         guests.add(newGuest);
         return newGuest;
     }
 
-    public List<ArGuest> getGuests() {
-        return Collections.unmodifiableList(guests);
+    public ObservableList<ArGuest> getGuests() {
+        return guests;
     }
 
     public int size(){
@@ -54,5 +54,10 @@ public class GuestManager {
 
     public void clear() {
         guests.clear();
+    }
+
+    @Override
+    public Iterator<ArGuest> iterator() {
+        return guests.iterator();
     }
 }

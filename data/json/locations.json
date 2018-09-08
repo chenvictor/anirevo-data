@@ -1,4 +1,54 @@
-[{
-  "purpose": "Renamed",
-  "location": "And this"
-}]
+[
+  {
+    "schedule": true,
+    "purpose": "Main Events",
+    "location": "Ballroom A"
+  },
+  {
+    "schedule": true,
+    "purpose": "Blue Stage",
+    "location": "Vendor Hall"
+  },
+  {
+    "schedule": true,
+    "purpose": "Panel Room 1",
+    "location": "Meeting Room 109"
+  },
+  {
+    "schedule": true,
+    "purpose": "Panel Room 2",
+    "location": "Meeting Room 119"
+  },
+  {
+    "schedule": true,
+    "purpose": "Panel Room 3",
+    "location": "Meeting Room 121"
+  },
+  {
+    "schedule": true,
+    "purpose": "Creation Station",
+    "location": "Meeting Room 116"
+  },
+  {
+    "purpose": "Omamori Charm Shop",
+    "location": "Meeting Room 113"
+  },
+  {
+    "schedule": true,
+    "purpose": "Viewing Room 1",
+    "location": "Meeting Room 111"
+  },
+  {
+    "schedule": true,
+    "purpose": "Viewing Room 2",
+    "location": "Meeting Room 114"
+  },
+  {
+    "purpose": "Console Gaming",
+    "location": "Vendor Hall"
+  },
+  {
+    "purpose": "Tabletop Gaming",
+    "location": "Vendor Hall"
+  }
+]
