@@ -1,5 +1,6 @@
 package cvic.anirevo.editor.tabs;
 
+import cvic.anirevo.editor.TabInteractionHandler.ContentController;
 import cvic.anirevo.model.anirevo.ArLocation;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -8,7 +9,7 @@ import javafx.scene.control.TextField;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TabLocationsContentController implements TabLocationsNavController.LocationsNavListener {
+public class TabLocationsContentController extends ContentController {
 
     private ArLocation mLocation;
 
@@ -59,9 +60,11 @@ public class TabLocationsContentController implements TabLocationsNavController.
     }
 
     @Override
-    public void itemSelected(ArLocation location) {
-        mLocation = location;
-        sync();
+    public void itemSelected(Object location) {
+        if (location == null || location instanceof ArLocation) {
+            mLocation = (ArLocation) location;
+            sync();
+        }
     }
 
 }

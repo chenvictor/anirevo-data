@@ -47,8 +47,14 @@ public class ArLocation implements Iterable<ArEvent>{
     }
 
     public void setPurpose(String purpose) {
+        //rename any events with the old location name
+        for (ArEvent event : EventManager.getInstance()) {
+            if (event.getLocation().equals(this.purpose)) {
+                event.setLocation(purpose);
+            }
+        }
         if (mListener != null) {
-            mListener.update(this.purpose, purpose);
+            mListener.update();
         }
         this.purpose = purpose;
     }
@@ -81,7 +87,7 @@ public class ArLocation implements Iterable<ArEvent>{
     }
 
     public interface UpdateListener {
-        void update(String oldName, String newName);
+        void update();
     }
 
 }

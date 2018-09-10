@@ -1,5 +1,6 @@
 package cvic.anirevo.editor.tabs;
 
+import cvic.anirevo.editor.TabInteractionHandler.ContentController;
 import cvic.anirevo.model.anirevo.ArEvent;
 import cvic.anirevo.model.anirevo.ArLocation;
 import cvic.anirevo.model.anirevo.LocationManager;
@@ -24,7 +25,7 @@ import java.awt.Point;
 import java.awt.MouseInfo;
 import java.util.*;
 
-public class TabEventsContentController implements TabEventsNavController.EventsNavListener {
+public class TabEventsContentController extends ContentController {
 
     private ArEvent mEvent;
 
@@ -340,13 +341,14 @@ public class TabEventsContentController implements TabEventsNavController.Events
     }
 
     @Override
-    public void itemSelected(ArEvent event) {
-        save(); //saves the previous item
-        mEvent = event;
-        sync();
+    public void itemSelected(Object event) {
+        if (event == null || event instanceof ArEvent) {
+            save(); //saves the previous item
+            mEvent = (ArEvent) event;
+            sync();
+        }
     }
 
-    @Override
     public void save() {
         saveEvent();
     }

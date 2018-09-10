@@ -26,7 +26,10 @@ public class Controller {
     @FXML
     private Tab tabGeneral, tabLocations, tabEvents, tabGuests;
 
+    private TabInteractionHandler handler;
+
     public void initialize() {
+        handler = new TabInteractionHandler();
         loadAll();
         tabChanged();
     }
@@ -63,7 +66,7 @@ public class Controller {
     private void loadTab(String navFXML, String contentFXML) {
         Node node;
         Object navController = null;
-        Object contentController;
+        Object contentController = null;
         if (navFXML != null) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(navFXML));
@@ -81,15 +84,6 @@ public class Controller {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(contentFXML));
                 node = loader.load();
                 contentController = loader.getController();
-                if (navController != null) {
-                    if (navController instanceof TabLocationsNavController) {
-                        ((TabLocationsNavController) navController).setListener((TabLocationsContentController) contentController);
-                    } else if (navController instanceof TabEventsNavController) {
-                        ((TabEventsNavController) navController).setListener((TabEventsContentController) contentController);
-                    } else if (navController instanceof TabGuestsNavController) {
-                        ((TabGuestsNavController) navController).setListener((TabGuestsContentController) contentController);
-                    }
-                }
                 contentPane.getChildren().setAll(node);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -97,6 +91,8 @@ public class Controller {
         } else {
             contentPane.getChildren().clear();
         }
+        handler.setContentController(contentController);
+        handler.setNavController(navController);
     }
 
     private void loadAll() {

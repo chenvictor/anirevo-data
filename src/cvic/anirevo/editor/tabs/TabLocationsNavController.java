@@ -1,29 +1,18 @@
 package cvic.anirevo.editor.tabs;
 
 import cvic.anirevo.editor.DragCell;
-import cvic.anirevo.model.anirevo.ArEvent;
+import cvic.anirevo.editor.TabInteractionHandler.NavigationController;
 import cvic.anirevo.model.anirevo.ArLocation;
-import cvic.anirevo.model.anirevo.EventManager;
 import cvic.anirevo.model.anirevo.LocationManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 
-public class TabLocationsNavController implements ArLocation.UpdateListener{
+public class TabLocationsNavController extends NavigationController implements ArLocation.UpdateListener{
 
     @FXML
     private ListView<ArLocation> listViewLocationsNav;
-
-    private LocationsNavListener mListener;
-
-    public void setListener(LocationsNavListener listener) {
-        mListener = listener;
-        if (!listViewLocationsNav.getItems().isEmpty()) {
-            listViewLocationsNav.getSelectionModel().select(0);
-            mListener.itemSelected(listViewLocationsNav.getItems().get(0));
-        }
-    }
 
     public void initialize() {
         listViewLocationsNav.setContextMenu(getBaseCtxMenu());
@@ -43,7 +32,7 @@ public class TabLocationsNavController implements ArLocation.UpdateListener{
             cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
                 if (!cell.isEmpty()) {
                     //select
-                    mListener.itemSelected(cell.getItem());
+                    updateContent(cell.getItem());
                 }
             });
             cell.setContextMenu(getCtxMenu(cell));
@@ -97,26 +86,11 @@ public class TabLocationsNavController implements ArLocation.UpdateListener{
         newLoc.setLocation("untitled");
         listViewLocationsNav.getItems().add(idx, newLoc);
         listViewLocationsNav.getSelectionModel().select(idx);
-        if (mListener != null) {
-            mListener.itemSelected(newLoc);
-        }
+        updateContent(newLoc);
     }
 
     @Override
-    public void update(String oldName, String newName) {
+    public void update() {
         listViewLocationsNav.refresh();
-        //rename any events with the old location name
-        for (ArEvent event : EventManager.getInstance()) {
-            if (event.getLocation().equals(oldName)) {
-                event.setLocation(newName);
-            }
-        }
     }
-
-    public interface LocationsNavListener {
-
-        void itemSelected(ArLocation location);
-
-    }
-
 }

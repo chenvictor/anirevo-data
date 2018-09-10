@@ -2,6 +2,7 @@ package cvic.anirevo.editor.tabs;
 
 import cvic.anirevo.editor.DragCell;
 import cvic.anirevo.editor.DragPane;
+import cvic.anirevo.editor.TabInteractionHandler.NavigationController;
 import cvic.anirevo.model.anirevo.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -12,31 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class TabEventsNavController implements ArEvent.TitleChangeListener, CategoryPane.CatDragListener {
-
-    private EventsNavListener mListener;
+public class TabEventsNavController extends NavigationController implements ArEvent.TitleChangeListener, CategoryPane.CatDragListener {
 
     @FXML
     private Accordion navAccordion;
-
-    public void setListener(EventsNavListener listener) {
-        mListener = listener;
-        navAccordion.expandedPaneProperty().addListener((observable, oldValue, newValue) -> {
-            CategoryPane newPane = (CategoryPane) navAccordion.getExpandedPane();
-            if (newPane == null) {
-                return;
-            }
-            ArEvent event = newPane.getListView().getSelectionModel().getSelectedItem();
-            mListener.itemSelected(event);
-        });
-        for (TitledPane pane : navAccordion.getPanes()) {
-            CategoryPane catPane = (CategoryPane) pane;
-            for (ArEvent event : catPane.getCategory()) {
-                mListener.itemSelected(event);
-                return;
-            }
-        }
-    }
 
     public void initialize() {
         for (ArCategory cat : CategoryManager.getInstance()) {
@@ -78,7 +58,8 @@ public class TabEventsNavController implements ArEvent.TitleChangeListener, Cate
             int idx = pane.getIndex();
             if (pane.equals(navAccordion.getExpandedPane()) || navAccordion.getPanes().size() == 1) {
                 //deselect item
-                mListener.itemSelected(null);
+                update();
+                updateContent(null);
             }
             navAccordion.getPanes().remove(idx);
         });
@@ -121,7 +102,7 @@ public class TabEventsNavController implements ArEvent.TitleChangeListener, Cate
         remove.setOnAction(event -> {
             ListView<ArEvent> view = cell.getListView();
             view.getItems().remove(cell.getIndex());
-            mListener.itemSelected(view.getSelectionModel().getSelectedItem());
+            updateContent(view.getSelectionModel().getSelectedItem());
         });
         changeCategory.setOnAction(event -> {
             //TODO
@@ -152,7 +133,7 @@ public class TabEventsNavController implements ArEvent.TitleChangeListener, Cate
         EventManager.getInstance().addEvent(event); //add to the event manager for consistency
         listView.getItems().add(idx, event);
         listView.getSelectionModel().select(idx);
-        mListener.itemSelected(event);
+        updateContent(event);
         event.setListener(this);
     }
 
@@ -214,9 +195,8 @@ public class TabEventsNavController implements ArEvent.TitleChangeListener, Cate
             cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
                 if (!cell.isEmpty()) {
                     //select
-                    mListener.itemSelected(cell.getItem());
+                    updateContent(cell.getItem());
                     TitledPane pane = (TitledPane) cell.getListView().getParent().getParent();
-                    System.out.println(pane.getText());
                 }
             });
             cell.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, event -> {
@@ -256,14 +236,6 @@ public class TabEventsNavController implements ArEvent.TitleChangeListener, Cate
             categories.add(catPane.getCategory());
         }
         CategoryManager.getInstance().setCategories(categories);
-    }
-
-    public interface EventsNavListener {
-
-        void itemSelected(ArEvent event);
-
-        void save();
-
     }
 
 }

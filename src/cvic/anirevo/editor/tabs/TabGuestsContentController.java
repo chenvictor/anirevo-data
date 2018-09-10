@@ -1,5 +1,6 @@
 package cvic.anirevo.editor.tabs;
 
+import cvic.anirevo.editor.TabInteractionHandler.ContentController;
 import cvic.anirevo.model.anirevo.ArGuest;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -15,7 +16,7 @@ import java.util.TimerTask;
 
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
-public class TabGuestsContentController implements TabGuestsNavController.GuestsNavListener{
+public class TabGuestsContentController extends ContentController {
 
     private static final String BASE_PORTRAIT_PATH = "data/images/";
 
@@ -107,8 +108,10 @@ public class TabGuestsContentController implements TabGuestsNavController.Guests
     }
 
     @Override
-    public void itemSelected(ArGuest guest) {
-        mGuest = guest;
-        sync();
+    public void itemSelected(Object guest) {
+        if (guest == null || guest instanceof ArGuest) {
+            mGuest = (ArGuest) guest;
+            sync();
+        }
     }
 }

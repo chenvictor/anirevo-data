@@ -1,6 +1,7 @@
 package cvic.anirevo.editor.tabs;
 
 import cvic.anirevo.editor.DragCell;
+import cvic.anirevo.editor.TabInteractionHandler.NavigationController;
 import cvic.anirevo.model.anirevo.ArGuest;
 import cvic.anirevo.model.anirevo.GuestManager;
 import javafx.fxml.FXML;
@@ -8,20 +9,10 @@ import javafx.scene.control.*;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 
-public class TabGuestsNavController implements ArGuest.ChangeListener{
+public class TabGuestsNavController extends NavigationController implements ArGuest.ChangeListener{
 
     @FXML
     private ListView<ArGuest> listViewGuestsNav;
-
-    private GuestsNavListener mListener;
-
-    public void setListener(GuestsNavListener listener) {
-        mListener = listener;
-        if (!listViewGuestsNav.getItems().isEmpty()) {
-            listViewGuestsNav.getSelectionModel().select(0);
-            mListener.itemSelected(listViewGuestsNav.getItems().get(0));
-        }
-    }
 
     public void initialize() {
         listViewGuestsNav.setContextMenu(getEmptyCtxMenu());
@@ -40,7 +31,7 @@ public class TabGuestsNavController implements ArGuest.ChangeListener{
             };
             cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
                 if (!cell.isEmpty()) {
-                    mListener.itemSelected(cell.getItem());
+                    updateContent(cell.getItem());
                 }
             });
             cell.setContextMenu(getCellCtxMenu(cell));
@@ -94,20 +85,12 @@ public class TabGuestsNavController implements ArGuest.ChangeListener{
         guest.setTitle("...");
         listViewGuestsNav.getItems().add(idx, guest);
         listViewGuestsNav.getSelectionModel().select(idx);
-        if (mListener != null) {
-            mListener.itemSelected(guest);
-        }
+        updateContent(guest);
     }
 
     @Override
     public void update() {
         listViewGuestsNav.refresh();
-    }
-
-    public interface GuestsNavListener {
-
-        void itemSelected(ArGuest guest);
-
     }
 
 }
