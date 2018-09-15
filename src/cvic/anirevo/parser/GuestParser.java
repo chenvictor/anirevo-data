@@ -13,9 +13,6 @@ public class GuestParser {
     private static final String TAG = "anirevo.GuestParser";
 
     public static void parseGuests(JSONArray guests) {
-        //Clear GuestManager
-        GuestManager.getInstance().clear();
-        //
         Log.i(TAG, guests.length() + " guests(s) to parse");
         for(int i = 0; i < guests.length(); i++) {
             try {

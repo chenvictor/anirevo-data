@@ -82,6 +82,15 @@ public class ArGuest {
         this.portraitPath = portraitPath;
     }
 
+    public Set<ArEvent> getEvents() {
+        return events;
+    }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+
     public interface ChangeListener {
         void update();
     }

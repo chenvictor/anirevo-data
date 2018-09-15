@@ -17,19 +17,21 @@ public class ArEvent {
 
     private TitleChangeListener mListener;
 
+    private ArCategory category;
     private String title;
     private String location;
     private String desc;
     private int restriction = 0;
 
     private List<CalendarEvent> timeblocks;
-    private ArCategory category;
+    private Set<ArGuest> guests;
     private Set<ArTag> tags;
 
     public ArEvent(String title) {
         this.title = title;
         tags = new HashSet<>();
         timeblocks = new ArrayList<>();
+        guests = new HashSet<>();
     }
 
     public void setListener(TitleChangeListener listener) {
@@ -107,6 +109,15 @@ public class ArEvent {
 
     public void setRestriction(int restriction) {
         this.restriction = restriction;
+    }
+
+    public Set<ArGuest> getGuests() {
+        return guests;
+    }
+
+    @Override
+    public String toString() {
+        return getTitle();
     }
 
     public interface TitleChangeListener {

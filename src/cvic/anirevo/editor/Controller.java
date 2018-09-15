@@ -2,6 +2,7 @@ package cvic.anirevo.editor;
 
 import cvic.anirevo.Log;
 import cvic.anirevo.editor.tabs.*;
+import cvic.anirevo.exceptions.InvalidIdException;
 import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.DateManager;
@@ -135,9 +136,12 @@ public class Controller {
 
     @FXML
     private void printStatus() {
-        //printDateManager();
-        //printLocationManager();
-        //printCategoryManager();
+        try {
+            System.out.println(EventManager.getInstance().getEvent(0).getGuests().size());
+            System.out.println(GuestManager.getInstance().getGuest(0).getEvents().size());
+        } catch (InvalidIdException e) {
+            e.printStackTrace();
+        }
     }
 
     private void printDateManager() {

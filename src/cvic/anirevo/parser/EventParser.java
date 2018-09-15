@@ -58,8 +58,6 @@ public class EventParser {
 
         String loc = event.getString("location");
         String desc = event.getString("desc");
-        JSONArray timeblocks = event.getJSONArray("time");
-        JSONArray tags = event.getJSONArray("tags");
 
         //Set basic properties
         arEvent.setLocation(loc);
@@ -70,23 +68,40 @@ public class EventParser {
         category.addEvent(arEvent);
 
         //Set CalendarEvents
-        DateManager dManager = DateManager.getInstance();
-        for (int i = 0; i < timeblocks.length(); i++) {
-            JSONObject time = timeblocks.getJSONObject(i);
-            CalendarDate date = dManager.getDate(time.getString("date"));
-            EventTime start = EventTimeParser.parse(time.getString("start"));
-            EventTime end = EventTimeParser.parse(time.getString("end"));
-            CalendarEvent calEvent = new CalendarEvent(arEvent);
-            calEvent.setDate(date);
-            calEvent.setStart(start);
-            calEvent.setEnd(end);
-            arEvent.addTimeblock(calEvent);
+        if (event.has("time")) {
+            JSONArray timeblocks = event.getJSONArray("time");
+            DateManager dManager = DateManager.getInstance();
+            for (int i = 0; i < timeblocks.length(); i++) {
+                JSONObject time = timeblocks.getJSONObject(i);
+                CalendarDate date = dManager.getDate(time.getString("date"));
+                EventTime start = EventTimeParser.parse(time.getString("start"));
+                EventTime end = EventTimeParser.parse(time.getString("end"));
+                CalendarEvent calEvent = new CalendarEvent(arEvent);
+                calEvent.setDate(date);
+                calEvent.setStart(start);
+                calEvent.setEnd(end);
+                arEvent.addTimeblock(calEvent);
+            }
         }
 
         //Set Tags
-        TagManager tManager = TagManager.getInstance();
-        for (int i = 0; i < tags.length(); i++) {
-            arEvent.addTag(tManager.getTag(tags.getString(i)));
+        if (event.has("tags")) {
+            TagManager tManager = TagManager.getInstance();
+            JSONArray tags = event.getJSONArray("tags");
+            for (int i = 0; i < tags.length(); i++) {
+                arEvent.addTag(tManager.getTag(tags.getString(i)));
+            }
+        }
+
+        //Set guests
+        if (event.has("guests")) {
+            GuestManager gManager = GuestManager.getInstance();
+            JSONArray array = event.getJSONArray("guests");
+            for (int i = 0; i < array.length(); i++) {
+                ArGuest guest = gManager.getGuest(array.getString(i));
+                arEvent.getGuests().add(guest);
+                guest.addEvent(arEvent);
+            }
         }
     }
 

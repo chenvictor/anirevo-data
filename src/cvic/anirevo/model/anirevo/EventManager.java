@@ -1,6 +1,7 @@
 package cvic.anirevo.model.anirevo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -42,6 +43,10 @@ public class EventManager implements Iterable<ArEvent>{
         ArEvent newEvent = new ArEvent(title);
         events.add(newEvent);
         return newEvent;
+    }
+
+    public List<ArEvent> getEvents() {
+        return Collections.unmodifiableList(events);
     }
 
     @Override

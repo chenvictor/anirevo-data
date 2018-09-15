@@ -42,10 +42,22 @@ public class TabLocationsContentController extends ContentController {
 
     private void sync() {
         if (mLocation != null) {
+            setDisable(false);
             textFieldPurpose.setText(mLocation.getPurpose());
             textFieldLocation.setText(mLocation.getLocation());
             checkBoxSchedule.setSelected(mLocation.isSchedule());
+        } else {
+            setDisable(true);
+            textFieldLocation.setText("");
+            textFieldPurpose.setText("");
+            checkBoxSchedule.setSelected(false);
         }
+    }
+
+    private void setDisable(boolean disable) {
+        textFieldPurpose.setDisable(disable);
+        textFieldLocation.setDisable(disable);
+        checkBoxSchedule.setDisable(disable);
     }
 
     @FXML

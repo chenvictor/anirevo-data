@@ -1,9 +1,7 @@
 package cvic.anirevo.editor.tabs;
 
 import cvic.anirevo.editor.TabInteractionHandler.ContentController;
-import cvic.anirevo.model.anirevo.ArEvent;
-import cvic.anirevo.model.anirevo.ArLocation;
-import cvic.anirevo.model.anirevo.LocationManager;
+import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.CalendarEvent;
 import cvic.anirevo.model.calendar.DateManager;
@@ -44,7 +42,12 @@ public class TabEventsContentController extends ContentController {
     @FXML
     private ListView<CalendarEvent> listViewTimeBlocks;
 
+    @FXML
+    private ListView<ArGuest> listViewGuests;
+
     private ObservableList<CalendarEvent> timeblocks = FXCollections.observableArrayList();
+
+    private ObservableList<ArGuest> guests = FXCollections.observableArrayList();
 
     private Timer timer;
 
@@ -159,6 +162,36 @@ public class TabEventsContentController extends ContentController {
             });
             return cell;
         });
+        listViewGuests.setCellFactory(lv -> {
+            ListCell<ArGuest> cell = new ListCell<ArGuest>(){
+                @Override
+                protected void updateItem(ArGuest item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setText(null);
+                    } else {
+                        setText(item.getName());
+                    }
+                }
+            };
+            cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
+                if (cell.isEmpty()) {
+                    listViewGuests.getSelectionModel().select(-1);
+                }
+            });
+            cell.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, event -> {
+                if (cell.isEmpty()) {
+                    cell.setContextMenu(getEmptyGuestCtxMenu());
+                } else {
+                    cell.setContextMenu(getGuestCtxMenu(cell));
+                }
+            });
+            return cell;
+        });
+        listViewGuests.setContextMenu(getEmptyGuestCtxMenu());
+        SortedList<ArGuest> sortedGuests = new SortedList<>(guests);
+        sortedGuests.setComparator(Comparator.comparing(ArGuest::getName));
+        listViewGuests.setItems(sortedGuests);
     }
 
     private ContextMenu getTimeblockCtxMenu(ListCell<CalendarEvent> cell) {
@@ -188,6 +221,33 @@ public class TabEventsContentController extends ContentController {
         add.setOnAction(event -> {
             addTimeblock();
         });
+        return menu;
+    }
+
+    private ContextMenu getEmptyGuestCtxMenu() {
+        ContextMenu menu = new ContextMenu();
+        MenuItem add = new MenuItem("Add");
+        menu.getItems().add(add);
+
+        add.setOnAction(event -> {
+            addGuest();
+        });
+        return menu;
+    }
+
+    private ContextMenu getGuestCtxMenu(ListCell<ArGuest> cell) {
+        ContextMenu menu = new ContextMenu();
+        MenuItem add = new MenuItem("Add");
+        MenuItem remove = new MenuItem("Remove");
+        menu.getItems().addAll(add, remove);
+
+        add.setOnAction(event -> {
+            addGuest();
+        });
+        remove.setOnAction(event -> {
+            removeGuest(cell.getItem());
+        });
+
         return menu;
     }
 
@@ -272,17 +332,25 @@ public class TabEventsContentController extends ContentController {
         return options;
     }
 
-    private void saveEvent() {
-        if (mEvent != null) {
-            mEvent.setTitle(textFieldTitle.getText());
-            mEvent.setLocation(textFieldLocation.getText());
-            mEvent.setDesc(textAreaDescription.getText());
-            mEvent.setRestriction(choiceAge.getValue());
-            mEvent.clearTimeblocks();
-            for (CalendarEvent block : timeblocks) {
-                mEvent.addTimeblock(block);
+    private void addGuest() {
+        List<ArGuest> choices = GuestManager.getInstance().getGuests();
+        ChoiceDialog<ArGuest> dialog = new ChoiceDialog<>(choices.get(0), choices);
+        dialog.setTitle("Add guest");
+        dialog.setHeaderText(null);
+        Optional<ArGuest> result = dialog.showAndWait();
+        if (result.isPresent()) {
+            ArGuest guest = result.get();
+            if (!guests.contains(guest)) {
+                guests.add(guest);
+                changed();
             }
         }
+    }
+
+    private void removeGuest(ArGuest guest) {
+        guests.remove(guest);
+        guest.getEvents().remove(mEvent);
+        changed();
     }
 
     private void changed() {
@@ -290,7 +358,7 @@ public class TabEventsContentController extends ContentController {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                saveEvent();
+                save();
             }
         }, 500);
     }
@@ -298,6 +366,7 @@ public class TabEventsContentController extends ContentController {
     private void sync() {
         if (textFieldTitle != null) {
             timeblocks.clear();
+            guests.clear();
             if (mEvent != null) {
                 setDisable(false);
                 textFieldTitle.setText(mEvent.getTitle());
@@ -312,6 +381,7 @@ public class TabEventsContentController extends ContentController {
                 textAreaDescription.setText(mEvent.getDesc());
                 choiceAge.getSelectionModel().select(getIndex(mEvent.getRestriction()));
                 timeblocks.addAll(mEvent.getTimeblocks());
+                guests.addAll(mEvent.getGuests());
             } else {
                 setDisable(true);
                 textFieldTitle.setText("");
@@ -330,6 +400,7 @@ public class TabEventsContentController extends ContentController {
         textAreaDescription.setDisable(disable);
         choiceAge.setDisable(disable);
         listViewTimeBlocks.setDisable(disable);
+        listViewGuests.setDisable(disable);
     }
 
     private int getIndex(int age) {
@@ -349,8 +420,22 @@ public class TabEventsContentController extends ContentController {
         }
     }
 
-    public void save() {
-        saveEvent();
+    private void save() {
+        if (mEvent != null) {
+            mEvent.setTitle(textFieldTitle.getText());
+            mEvent.setLocation(textFieldLocation.getText());
+            mEvent.setDesc(textAreaDescription.getText());
+            mEvent.setRestriction(choiceAge.getValue());
+            mEvent.clearTimeblocks();
+            mEvent.getGuests().clear();
+            for (CalendarEvent block : timeblocks) {
+                mEvent.addTimeblock(block);
+            }
+            for (ArGuest guest : guests) {
+                mEvent.getGuests().add(guest);
+                guest.getEvents().add(mEvent);
+            }
+        }
     }
 
     private int getLocIndex(String purpose) {

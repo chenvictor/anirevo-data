@@ -64,6 +64,14 @@ public class Unparser {
         return timeArray;
     }
 
+    private static JSONArray arrayifyGuests(ArEvent event) {
+        JSONArray guestArray = new JSONArray();
+        for (ArGuest guest : event.getGuests()) {
+            guestArray.put(guest.getName());
+        }
+        return guestArray;
+    }
+
     //Objectifiers
 
     private static JSONObject objectify(ArCategory cat) {
@@ -85,6 +93,9 @@ public class Unparser {
         eventObject.put("desc", event.getDesc());
         if (event.getRestriction() != 0) {
             eventObject.put("age", event.getRestriction());
+        }
+        if (event.getGuests().size() != 0) {
+            eventObject.put("guests", arrayifyGuests(event));
         }
         eventObject.put("tags", new JSONArray());   //TODO: temp empty tag list
         return eventObject;

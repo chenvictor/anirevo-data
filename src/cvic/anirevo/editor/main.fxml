@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -22,24 +23,26 @@
     </rowConstraints>
     <MenuBar>
         <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save"/>
-            <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Load"/>
+            <MenuItem mnemonicParsing="false" onAction="#onSave" text="Save" />
+            <MenuItem mnemonicParsing="false" onAction="#onLoad" text="Load" />
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About"/>
-            <MenuItem mnemonicParsing="false" onAction="#printStatus" text="Debug Status"/>
+            <MenuItem mnemonicParsing="false" text="About" />
+            <MenuItem mnemonicParsing="false" onAction="#printStatus" text="Debug Status" />
         </Menu>
     </MenuBar>
-    <TabPane minHeight="30.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"
-             GridPane.vgrow="NEVER">
-        <Tab fx:id="tabGeneral" closable="false" onSelectionChanged="#tabChanged" text="General"/>
-        <Tab fx:id="tabLocations" closable="false" onSelectionChanged="#tabChanged" text="Locations"/>
-        <Tab fx:id="tabEvents" closable="false" onSelectionChanged="#tabChanged" text="Events"/>
-        <Tab fx:id="tabGuests" closable="false" onSelectionChanged="#tabChanged" text="Guests"/>
+    <TabPane minHeight="30.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+        <Tab fx:id="tabGeneral" closable="false" onSelectionChanged="#tabChanged" text="General" />
+        <Tab fx:id="tabLocations" closable="false" onSelectionChanged="#tabChanged" text="Locations" />
+        <Tab fx:id="tabEvents" closable="false" onSelectionChanged="#tabChanged" text="Events" />
+        <Tab fx:id="tabGuests" closable="false" onSelectionChanged="#tabChanged" text="Guests" />
     </TabPane>
-    <SplitPane dividerPositions="0.29797979797979796" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2"
-               GridPane.vgrow="ALWAYS">
-        <AnchorPane fx:id="navPane" maxWidth="200.0" minHeight="0.0" minWidth="50.0"/>
-        <AnchorPane fx:id="contentPane" minHeight="0.0" minWidth="0.0"/>
+    <SplitPane dividerPositions="0.29797979797979796" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+        <AnchorPane fx:id="navPane" maxWidth="200.0" minHeight="0.0" minWidth="50.0" />
+      <ScrollPane>
+         <content>
+              <AnchorPane fx:id="contentPane" minHeight="0.0" minWidth="0.0" />
+         </content>
+      </ScrollPane>
     </SplitPane>
 </GridPane>
