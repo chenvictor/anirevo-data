@@ -6,6 +6,8 @@ public class CalendarDate {
 
     private String name;
 
+    private String showStartHour;
+
     public CalendarDate(String name) {
         this.name = name;
     }
@@ -34,5 +36,13 @@ public class CalendarDate {
     @Override
     public String toString() {
         return getName();
+    }
+
+    public String getShowStartHour() {
+        return showStartHour;
+    }
+
+    public void setShowStartHour(String showStartHour) {
+        this.showStartHour = showStartHour;
     }
 }

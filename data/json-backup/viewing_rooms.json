@@ -1,0 +1,71 @@
+[
+  {
+    "day": "Friday, Aug 3",
+    "start": "10AM",
+    "rooms": [
+      {
+        "purpose": "Viewing Room 1",
+        "shows": [
+          {
+            "title": "Granblue Fantasy",
+            "desc": "..."
+          },
+          {
+            "title": "3-gatsu no Lion",
+            "desc": "..."
+          },
+          {
+            "title": "ReLIFE",
+            "desc": "..."
+          },
+          {
+            "title": "JoJo no Kimyou na Bouken",
+            "desc": "..."
+          },
+          {
+            "title": "Megalo Box",
+            "desc": "..."
+          },
+          {
+            "title": "Boku no Hero Academia S3",
+            "desc": "..."
+          },
+          {
+            "title": "Poputepipikku",
+            "desc": "..."
+          },
+          {
+            "title": "Love Live! Sunshine!! S2",
+            "desc": "..."
+          },
+          {
+            "title": "Mahou Shoujo Ore",
+            "desc": "..."
+          },
+          {
+            "title": "Persona 4 the Golden Animation",
+            "desc": "..."
+          },
+          {
+            "title": "Persona 5 the Animation",
+            "desc": "..."
+          },
+          {
+            "title": "Shokugeki no Souma: Totsuki Ressha-hen",
+            "desc": "..."
+          },
+          {
+            "title": "Panty & Stocking with Garterbelt",
+            "desc": "...",
+            "age": 18
+          },
+          {
+            "title": "Full Metal Panic! Invisible Victory",
+            "desc": "...",
+            "age": 18
+          }
+        ]
+      }
+    ]
+  }
+]

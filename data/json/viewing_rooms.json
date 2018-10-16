@@ -1,0 +1,82 @@
+[
+  {
+    "rooms": [
+      {
+        "shows": [
+          {"title": "Gundam Build Divers"},
+          {"title": "Cardcaptor Sakura: Clear Card-hen"}
+        ],
+        "purpose": "Viewing Room 1"
+      },
+      {
+        "shows": [
+          {"title": "Fullmetal Alchemist: Brotherhood"},
+          {"title": "Kiseijuu: Sei no Kakuritsu"}
+        ],
+        "purpose": "Viewing Room 2"
+      }
+    ],
+    "start": "10AM",
+    "day": "Saturday, Aug 4"
+  },
+  {
+    "rooms": [
+      {
+        "shows": [
+          {"title": "Granblue Fantasy"},
+          {"title": "3-gatsu no Lion"},
+          {"title": "ReLIFE"},
+          {"title": "JoJo no Kimyou na Bouken"},
+          {"title": "Megalo Box"},
+          {"title": "Boku no Hero Academia S3"},
+          {"title": "Poputepipikku"},
+          {"title": "Love Live! Sunshine!! S2"},
+          {"title": "Mahou Shoujo Ore"},
+          {"title": "Persona 4 the Golden Animation"},
+          {"title": "Persona 5 the Animation"},
+          {"title": "Shokugeki no Souma: Totsuki Ressha-hen"},
+          {
+            "title": "Panty & Stocking with Garterbelt",
+            "age": 18
+          },
+          {
+            "title": "Full Metal Panic! Invisible Victory",
+            "age": 18
+          }
+        ],
+        "purpose": "Viewing Room 1"
+      },
+      {
+        "shows": [
+          {"title": "Inou-Battle wa Nichijou-kei no Naka de"},
+          {"title": "Bleach"},
+          {"title": "Lupin III Part 4"},
+          {"title": "Planetarian"}
+        ],
+        "purpose": "Viewing Room 2"
+      }
+    ],
+    "start": "10AM",
+    "day": "Friday, Aug 3"
+  },
+  {
+    "rooms": [
+      {
+        "shows": [
+          {"title": "Blend S"},
+          {"title": "Hinamatsuri"}
+        ],
+        "purpose": "Viewing Room 1"
+      },
+      {
+        "shows": [
+          {"title": "Miira no Kaikata"},
+          {"title": "Demi-chan wa Kataritai"}
+        ],
+        "purpose": "Viewing Room 2"
+      }
+    ],
+    "start": "10AM",
+    "day": "Sunday, Aug 5"
+  }
+]

@@ -1,6 +1,8 @@
 package cvic.anirevo.parser;
 
 import cvic.anirevo.editor.DataPaths;
+import cvic.anirevo.model.ArShow;
+import cvic.anirevo.model.ViewingRoomManager;
 import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.CalendarEvent;
@@ -44,6 +46,42 @@ public class Unparser {
             output.put(objectify(guest));
         }
         JSONUtils.writeJSON(DataPaths.JSON_GUESTS, output);
+    }
+
+    public static void viewingRooms() {
+        ViewingRoomManager manager = ViewingRoomManager.getInstance();
+        JSONArray output = new JSONArray();
+        for (CalendarDate date : manager.getKeys()) {
+            JSONObject dateObject = new JSONObject();
+            dateObject.put("day", date.getName());
+            if (date.getShowStartHour() == null) {
+                dateObject.put("start", "");
+            } else {
+                dateObject.put("start", date.getShowStartHour());
+            }
+            JSONArray roomsArray = new JSONArray();
+            for (ViewingRoomManager.ViewingRoom room : manager.getViewingRooms(date)) {
+                JSONObject roomObject = new JSONObject();
+                roomObject.put("purpose", room.getPurpose());
+                JSONArray shows = new JSONArray();
+                for (ArShow show : room.getShows()) {
+                    JSONObject showObject = new JSONObject();
+                    showObject.put("title", show.getTitle());
+                    if (show.getAge() != 0) {
+                        showObject.put("age", show.getAge());
+                    }
+                    if (show.getDescription() != null && show.getDescription().length() != 0) {
+                        showObject.put("desc", show.getDescription());
+                    }
+                    shows.put(showObject);
+                }
+                roomObject.put("shows", shows);
+                roomsArray.put(roomObject);
+            }
+            dateObject.put("rooms", roomsArray);
+            output.put(dateObject);
+        }
+        JSONUtils.writeJSON(DataPaths.JSON_VIEWING_ROOMS, output);
     }
 
     //Arrayifiers

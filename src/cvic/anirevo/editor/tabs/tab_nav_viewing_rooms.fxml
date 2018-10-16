@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabViewingRoomsNavController">
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints fillWidth="false" minWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints fillHeight="false" minHeight="30.0" vgrow="NEVER" />
+            <RowConstraints fillHeight="false" minHeight="30.0" vgrow="NEVER" />
+          <RowConstraints fillHeight="false" minHeight="30.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <ChoiceBox fx:id="choiceBoxDate" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+        <ListView fx:id="listShows" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+        <Label text="Date" GridPane.halignment="CENTER" />
+        <Label text="Start Hour" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+        <TextField fx:id="textFieldStartHour" onKeyTyped="#startHourChanged" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Room" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <ChoiceBox fx:id="choiceBoxRoom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    </GridPane>
+</ScrollPane>

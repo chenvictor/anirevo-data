@@ -1,21 +1,14 @@
 package cvic.anirevo.editor;
 
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class AniRevoData extends Application {
 
     private Controller mController;
-
-    private EventHandler<WindowEvent> confirmCloseEventHandler = event -> {
-        Platform.exit();
-    };
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -25,10 +18,9 @@ public class AniRevoData extends Application {
         primaryStage.setTitle("AniRevo");
 
         primaryStage.setScene(new Scene(root, 700, 400));
-        primaryStage.setOnCloseRequest(confirmCloseEventHandler);
+        primaryStage.setOnCloseRequest(event -> System.exit(0));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

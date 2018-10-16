@@ -1,8 +1,7 @@
 package cvic.anirevo.editor;
 
 import cvic.anirevo.Log;
-import cvic.anirevo.editor.tabs.*;
-import cvic.anirevo.exceptions.InvalidIdException;
+import cvic.anirevo.model.ViewingRoomManager;
 import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.DateManager;
@@ -11,8 +10,6 @@ import cvic.anirevo.utils.JSONUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 
@@ -25,14 +22,14 @@ public class Controller {
     private AnchorPane navPane, contentPane;
 
     @FXML
-    private Tab tabGeneral, tabLocations, tabEvents, tabGuests;
+    private Tab tabGeneral, tabLocations, tabEvents, tabGuests, tabViewingRooms;
 
     private TabInteractionHandler handler;
 
     public void initialize() {
         handler = new TabInteractionHandler();
         loadAll();
-        tabChanged();
+        // tabChanged();    loadAll already calls tabChanged();
     }
 
     @FXML
@@ -48,6 +45,8 @@ public class Controller {
             loadTab("tabs/tab_nav_events.fxml", "tabs/tab_content_events.fxml");
         } else if (tabGuests.isSelected()) {
             loadTab("tabs/tab_nav_guests.fxml", "tabs/tab_content_guests.fxml");
+        } else if (tabViewingRooms.isSelected()) {
+            loadTab("tabs/tab_nav_viewing_rooms.fxml", "tabs/tab_content_viewing_rooms.fxml");
         }
     }
 
@@ -56,6 +55,7 @@ public class Controller {
         Unparser.locations();
         Unparser.events();
         Unparser.guests();
+        Unparser.viewingRooms();
         Log.notify("Anirevo-data", "Data saved");
     }
 
@@ -102,6 +102,7 @@ public class Controller {
         CategoryManager.getInstance().clear();
         EventManager.getInstance().clear();
         DateManager.getInstance().clear();
+        ViewingRoomManager.getInstance().clear();
         GuestManager.getInstance().clear();
         TagManager.getInstance().clear();
 
@@ -129,6 +130,12 @@ public class Controller {
             System.out.println("guests.json not found");
             e.printStackTrace();
         }
+        try {
+            ViewingRoomParser.parseViewingRoom(JSONUtils.getArray(DataPaths.JSON_VIEWING_ROOMS));
+        } catch (FileNotFoundException e) {
+            System.out.println("viewing_rooms.json not foud");
+            e.printStackTrace();
+        }
 
         //reset tab
         tabChanged();
@@ -136,12 +143,7 @@ public class Controller {
 
     @FXML
     private void printStatus() {
-        try {
-            System.out.println(EventManager.getInstance().getEvent(0).getGuests().size());
-            System.out.println(GuestManager.getInstance().getGuest(0).getEvents().size());
-        } catch (InvalidIdException e) {
-            e.printStackTrace();
-        }
+        printViewingRoomManager();
     }
 
     private void printDateManager() {
@@ -168,6 +170,17 @@ public class Controller {
             System.out.println("  " + cat.getTitle() + ":");
             for (ArEvent event : cat) {
                 System.out.println("  -" + event.getTitle());
+            }
+        }
+    }
+
+    private void printViewingRoomManager() {
+        System.out.println("ViewingRoom Manager");
+        System.out.println("Dates:");
+        for (CalendarDate date : DateManager.getInstance()) {
+            System.out.println("  " + date.getName() + ":");
+            for (ViewingRoomManager.ViewingRoom room : ViewingRoomManager.getInstance().getViewingRooms(date)) {
+                System.out.println("  -" + room.getPurpose());
             }
         }
     }

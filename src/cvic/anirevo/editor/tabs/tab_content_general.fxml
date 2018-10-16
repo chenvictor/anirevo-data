@@ -4,12 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-
-<GridPane gridLinesVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabGeneralContentController">
+<?import javafx.scene.layout.*?>
+<GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cvic.anirevo.editor.tabs.TabGeneralContentController">
     <columnConstraints>
         <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="40.0" />
         <ColumnConstraints minWidth="0.0" />
@@ -29,5 +25,5 @@
         </padding>
     </TextField>
     <Label text="Dates" GridPane.rowIndex="1" />
-    <ListView fx:id="list_dates" maxHeight="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <ListView fx:id="list_dates" prefHeight="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
 </GridPane>
