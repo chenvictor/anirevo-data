@@ -71,6 +71,10 @@
       {
         "shows": [
           {"title": "Miira no Kaikata"},
+          {
+            "title": "testshow",
+            "age": 18
+          },
           {"title": "Demi-chan wa Kataritai"}
         ],
         "purpose": "Viewing Room 2"
