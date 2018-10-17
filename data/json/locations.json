@@ -44,11 +44,38 @@
     "location": "Meeting Room 114"
   },
   {
+    "schedule": true,
     "purpose": "Console Gaming",
     "location": "Vendor Hall"
   },
   {
+    "schedule": true,
     "purpose": "Tabletop Gaming",
+    "location": "Vendor Hall"
+  },
+  {
+    "schedule": true,
+    "purpose": "Autograph Area 1",
+    "location": "Vendor Hall"
+  },
+  {
+    "schedule": true,
+    "purpose": "Autograph Area 2",
+    "location": "Vendor Hall"
+  },
+  {
+    "schedule": true,
+    "purpose": "Autograph Area 3",
+    "location": "Vendor Hall"
+  },
+  {
+    "schedule": true,
+    "purpose": "Photobooth 1",
+    "location": "Vendor Hall"
+  },
+  {
+    "schedule": true,
+    "purpose": "Photobooth 2",
     "location": "Vendor Hall"
   }
 ]
