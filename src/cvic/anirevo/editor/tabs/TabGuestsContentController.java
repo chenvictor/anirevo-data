@@ -1,5 +1,6 @@
 package cvic.anirevo.editor.tabs;
 
+import cvic.anirevo.editor.DataPaths;
 import cvic.anirevo.editor.TabInteractionHandler.ContentController;
 import cvic.anirevo.model.anirevo.ArEvent;
 import cvic.anirevo.model.anirevo.ArGuest;
@@ -23,8 +24,6 @@ import java.util.*;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class TabGuestsContentController extends ContentController {
-
-    private static final String BASE_PORTRAIT_PATH = "data/images/";
 
     @FXML
     private TextField textFieldName, textFieldTitle, textFieldJapanese;
@@ -61,7 +60,7 @@ public class TabGuestsContentController extends ContentController {
         fileChooser = new FileChooser();
         fileChooser.setTitle("Select a Guest Portrait");
         fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png"));
-        fileChooser.setInitialDirectory(new File(BASE_PORTRAIT_PATH));
+        fileChooser.setInitialDirectory(new File(DataPaths.IMAGES));
         listViewEvents.setCellFactory(lv -> {
             ListCell<ArEvent> cell = new ListCell<ArEvent>(){
                 @Override
@@ -125,7 +124,7 @@ public class TabGuestsContentController extends ContentController {
     private void changeImage() {
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
-            File baseDirectory = new File(BASE_PORTRAIT_PATH);
+            File baseDirectory = new File(DataPaths.IMAGES);
             if (!file.getParentFile().getAbsolutePath().equals(baseDirectory.getAbsolutePath())) {
                 System.out.println("Copy file over");
                 //file must be copied over
@@ -183,7 +182,7 @@ public class TabGuestsContentController extends ContentController {
             textFieldJapanese.setText(mGuest.getJapanese());
             if (mGuest.getPortraitPath() != null && mGuest.getPortraitPath().length() != 0) {
                 try {
-                    File file = new File(BASE_PORTRAIT_PATH + mGuest.getPortraitPath());
+                    File file = new File(DataPaths.IMAGES + mGuest.getPortraitPath());
                     Image image = new Image(file.toURI().toString());
                     imagePortrait.setImage(image);
                 } catch (Exception e) {

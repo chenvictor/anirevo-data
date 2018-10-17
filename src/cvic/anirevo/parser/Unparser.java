@@ -1,7 +1,9 @@
 package cvic.anirevo.parser;
 
+import cvic.anirevo.model.MapVenue;
 import cvic.anirevo.editor.DataPaths;
 import cvic.anirevo.model.ArShow;
+import cvic.anirevo.model.VenueManager;
 import cvic.anirevo.model.ViewingRoomManager;
 import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
@@ -82,6 +84,18 @@ public class Unparser {
             output.put(dateObject);
         }
         JSONUtils.writeJSON(DataPaths.JSON_VIEWING_ROOMS, output);
+    }
+
+    public static void map() {
+        VenueManager manager = VenueManager.getInstance();
+        JSONArray output = new JSONArray();
+        for (MapVenue venue : manager.getVenues()) {
+            JSONObject venueObject = new JSONObject();
+            venueObject.put("name", venue.getName());
+            venueObject.put("image", venue.getImagePath());
+            output.put(venueObject);
+        }
+        JSONUtils.writeJSON(DataPaths.JSON_MAP, output);
     }
 
     //Arrayifiers

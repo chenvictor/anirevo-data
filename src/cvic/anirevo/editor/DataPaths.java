@@ -7,6 +7,8 @@ public class DataPaths {
             JSON_LOCATIONS = "data/json/locations.json",
             JSON_EVENTS = "data/json/events.json",
             JSON_GUESTS = "data/json/guests.json",
-            JSON_VIEWING_ROOMS = "data/json/viewing_rooms.json";
+            JSON_VIEWING_ROOMS = "data/json/viewing_rooms.json",
+            JSON_MAP = "data/json/map.json",
+            IMAGES = "data/images/";
 
 }

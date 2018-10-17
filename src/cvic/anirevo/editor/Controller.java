@@ -1,6 +1,7 @@
 package cvic.anirevo.editor;
 
 import cvic.anirevo.Log;
+import cvic.anirevo.model.VenueManager;
 import cvic.anirevo.model.ViewingRoomManager;
 import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
@@ -22,7 +23,7 @@ public class Controller {
     private AnchorPane navPane, contentPane;
 
     @FXML
-    private Tab tabGeneral, tabLocations, tabEvents, tabGuests, tabViewingRooms;
+    private Tab tabGeneral, tabLocations, tabEvents, tabGuests, tabViewingRooms, tabMap;
 
     private TabInteractionHandler handler;
 
@@ -47,6 +48,8 @@ public class Controller {
             loadTab("tabs/tab_nav_guests.fxml", "tabs/tab_content_guests.fxml");
         } else if (tabViewingRooms.isSelected()) {
             loadTab("tabs/tab_nav_viewing_rooms.fxml", "tabs/tab_content_viewing_rooms.fxml");
+        } else if (tabMap.isSelected()) {
+            loadTab("tabs/tab_nav_map.fxml", "tabs/tab_content_map.fxml");
         }
     }
 
@@ -56,6 +59,7 @@ public class Controller {
         Unparser.events();
         Unparser.guests();
         Unparser.viewingRooms();
+        Unparser.map();
         Log.notify("Anirevo-data", "Data saved");
     }
 
@@ -104,6 +108,7 @@ public class Controller {
         DateManager.getInstance().clear();
         ViewingRoomManager.getInstance().clear();
         GuestManager.getInstance().clear();
+        VenueManager.getInstance().clear();
         TagManager.getInstance().clear();
 
         try {
@@ -133,7 +138,13 @@ public class Controller {
         try {
             ViewingRoomParser.parseViewingRoom(JSONUtils.getArray(DataPaths.JSON_VIEWING_ROOMS));
         } catch (FileNotFoundException e) {
-            System.out.println("viewing_rooms.json not foud");
+            System.out.println("viewing_rooms.json not found");
+            e.printStackTrace();
+        }
+        try {
+            MapParser.parse(JSONUtils.getArray(DataPaths.JSON_MAP));
+        } catch (FileNotFoundException e) {
+            System.out.println("map.json not found");
             e.printStackTrace();
         }
 
