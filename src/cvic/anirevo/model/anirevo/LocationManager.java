@@ -25,13 +25,13 @@ public class LocationManager implements Iterable<ArLocation>{
         locations = FXCollections.observableArrayList();
     }
 
-    public ArLocation getLocation(String location) {
+    public ArLocation getLocation(String purpose) {
         for(ArLocation loc : locations) {
-            if (loc.getPurpose().equals(location)) {
+            if (loc.getPurpose().equals(purpose)) {
                 return loc;
             }
         }
-        ArLocation newLoc = new ArLocation(location);
+        ArLocation newLoc = new ArLocation(purpose);
         locations.add(newLoc);
         return newLoc;
     }

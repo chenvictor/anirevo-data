@@ -15,7 +15,8 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" />
+      <RowConstraints minHeight="10.0" />
     </rowConstraints>
     <columnConstraints>
         <ColumnConstraints minWidth="10.0" />
@@ -24,7 +25,7 @@
       <ColumnConstraints minWidth="10.0" />
     </columnConstraints>
     <ImageView fx:id="imagePortrait" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.rowSpan="4" />
-    <Button fx:id="buttonChangeImage" mnemonicParsing="false" onAction="#changeImage" text="Change Image" GridPane.rowIndex="4" />
+    <Button fx:id="buttonChangeImage" mnemonicParsing="false" onAction="#changeImage" text="Change Image" GridPane.rowIndex="4" GridPane.valignment="TOP" />
     <Label text="Name" GridPane.columnIndex="2" />
     <Label text="Title" GridPane.columnIndex="2" GridPane.rowIndex="1" />
     <Label text="Japanese" GridPane.columnIndex="2" GridPane.rowIndex="2" />
@@ -33,4 +34,8 @@
     <TextField fx:id="textFieldJapanese" GridPane.columnIndex="3" GridPane.rowIndex="2" />
    <Label text="Events" GridPane.columnIndex="2" GridPane.rowIndex="3" />
    <ListView fx:id="listViewEvents" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+   <Label text="Autographs" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+   <Label text="Photobooth" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+   <ListView fx:id="listViewAutographs" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+   <ListView fx:id="listViewPhotobooth" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 </GridPane>

@@ -39,7 +39,47 @@
     "title": "Cosplayers"
   },
   {
+    "photobooth": [
+      {
+        "date": "Friday, Aug 3",
+        "start": "3PM",
+        "location": "Photobooth 2",
+        "end": "4PM"
+      },
+      {
+        "date": "Saturday, Aug 4",
+        "start": "3PM",
+        "location": "Photobooth 1",
+        "end": "4PM"
+      },
+      {
+        "date": "Sunday, Aug 5",
+        "start": "4PM",
+        "location": "Photobooth 2",
+        "end": "5PM"
+      }
+    ],
     "name": "Richard Ian Cox",
+    "autographs": [
+      {
+        "date": "Friday, Aug 3",
+        "start": "1:30PM",
+        "location": "Autograph Area 1",
+        "end": "2:30PM"
+      },
+      {
+        "date": "Saturday, Aug 4",
+        "start": "11:30AM",
+        "location": "Autograph Area 2",
+        "end": "12:30PM"
+      },
+      {
+        "date": "Sunday, Aug 5",
+        "start": "1:30PM",
+        "location": "Autograph Area 2",
+        "end": "2:30PM"
+      }
+    ],
     "title": "Voice Actor"
   },
   {

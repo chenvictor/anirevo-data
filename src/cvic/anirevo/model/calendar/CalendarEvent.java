@@ -3,26 +3,13 @@ package cvic.anirevo.model.calendar;
 import cvic.anirevo.model.anirevo.ArEvent;
 import cvic.anirevo.utils.TimeUtils;
 
-/**
- * Created by FRAMGIA\pham.van.khac on 07/07/2016.
- * Adapted for AniRevo by chenvictor
- */
-
 public class CalendarEvent {
-
-    private static int defaultColor = -1;
 
     private final ArEvent event;
 
     private CalendarDate date;
     private EventTime start;
     private EventTime end;
-
-    private int color = defaultColor;
-
-    public static void setDefaultColor(int color) {
-        defaultColor = color;
-    }
 
     public CalendarEvent(ArEvent event) {
         this.event = event;
@@ -34,14 +21,6 @@ public class CalendarEvent {
 
     public String getName() {
         return event.getTitle();
-    }
-
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
     }
 
     public EventTime getStartTime() {
@@ -70,19 +49,6 @@ public class CalendarEvent {
 
     public void setDate(CalendarDate date) {
         this.date = date;
-    }
-
-    //Extra Helpers to assist with Calendar Fragment
-    public int getStartHour() {
-        return start.getHour();
-    }
-
-    public int getEndHour() {
-        if (end.getMinute() == 0) {
-            return end.getHour();
-        } else {
-            return end.getHour() + 1;
-        }
     }
 
     @Override

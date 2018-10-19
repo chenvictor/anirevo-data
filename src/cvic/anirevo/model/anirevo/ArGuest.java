@@ -1,5 +1,9 @@
 package cvic.anirevo.model.anirevo;
 
+import cvic.anirevo.model.calendar.LocatedCalendarEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,11 +18,24 @@ public class ArGuest {
 
     private Set<ArEvent> events;
 
+    private ObservableList<LocatedCalendarEvent> autograph;
+    private ObservableList<LocatedCalendarEvent> photobooth;
+
     private ChangeListener mListener;
 
     public ArGuest(String name) {
         this.name = name;
         events = new HashSet<>();
+        autograph = FXCollections.observableArrayList();
+        photobooth = FXCollections.observableArrayList();
+    }
+
+    public ObservableList<LocatedCalendarEvent> getAutograph() {
+        return autograph;
+    }
+
+    public ObservableList<LocatedCalendarEvent> getPhotobooth() {
+        return photobooth;
     }
 
     public void setListener(ChangeListener listener) {

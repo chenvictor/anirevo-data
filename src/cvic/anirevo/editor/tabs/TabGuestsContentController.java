@@ -2,9 +2,12 @@ package cvic.anirevo.editor.tabs;
 
 import cvic.anirevo.editor.DataPaths;
 import cvic.anirevo.editor.TabInteractionHandler.ContentController;
-import cvic.anirevo.model.anirevo.ArEvent;
-import cvic.anirevo.model.anirevo.ArGuest;
-import cvic.anirevo.model.anirevo.EventManager;
+import cvic.anirevo.model.anirevo.*;
+import cvic.anirevo.model.calendar.CalendarDate;
+import cvic.anirevo.model.calendar.CalendarEvent;
+import cvic.anirevo.model.calendar.DateManager;
+import cvic.anirevo.model.calendar.LocatedCalendarEvent;
+import cvic.anirevo.parser.EventTimeParser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.SortedList;
@@ -15,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import sun.util.resources.CalendarData;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,6 +40,12 @@ public class TabGuestsContentController extends ContentController {
 
     @FXML
     private ListView<ArEvent> listViewEvents;
+
+    @FXML
+    private ListView<LocatedCalendarEvent> listViewAutographs;
+
+    @FXML
+    private ListView<LocatedCalendarEvent> listViewPhotobooth;
 
     private ObservableList<ArEvent> events = FXCollections.observableArrayList();
 
@@ -61,6 +71,10 @@ public class TabGuestsContentController extends ContentController {
         fileChooser.setTitle("Select a Guest Portrait");
         fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png"));
         fileChooser.setInitialDirectory(new File(DataPaths.IMAGES));
+        initListViews();
+    }
+
+    private void initListViews() {
         listViewEvents.setCellFactory(lv -> {
             ListCell<ArEvent> cell = new ListCell<ArEvent>(){
                 @Override
@@ -79,11 +93,7 @@ public class TabGuestsContentController extends ContentController {
                 }
             });
             cell.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, event -> {
-                if (cell.isEmpty()) {
-                    cell.setContextMenu(getEmptyEventsMenu());
-                } else {
-                    cell.setContextMenu(getEventsMenu(cell));
-                }
+                cell.setContextMenu(cell.isEmpty() ? getEmptyEventsMenu() : getEventsMenu(cell));
             });
             return cell;
         });
@@ -91,6 +101,46 @@ public class TabGuestsContentController extends ContentController {
         SortedList<ArEvent> sortedEvents = new SortedList<>(events);
         sortedEvents.setComparator(Comparator.comparing(ArEvent::getTitle));
         listViewEvents.setItems(sortedEvents);
+
+        listViewAutographs.setCellFactory(lv -> {
+            ListCell<LocatedCalendarEvent> cell = new ListCell<LocatedCalendarEvent>(){
+                @Override
+                protected void updateItem(LocatedCalendarEvent item, boolean empty) {
+                    super.updateItem(item, empty);
+                    setText (empty ? null : item.getName());
+                }
+            };
+            cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
+                if (cell.isEmpty()) {
+                    listViewAutographs.getSelectionModel().select(-1);
+                }
+            });
+            cell.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, event -> {
+                cell.setContextMenu(cell.isEmpty() ? getEmptyAutographMenu() : getAutographMenu(cell));
+            });
+            return cell;
+        });
+        listViewAutographs.setContextMenu(getEmptyAutographMenu());
+
+        listViewPhotobooth.setCellFactory(lv -> {
+            ListCell<LocatedCalendarEvent> cell = new ListCell<LocatedCalendarEvent>(){
+                @Override
+                protected void updateItem(LocatedCalendarEvent item, boolean empty) {
+                    super.updateItem(item, empty);
+                    setText (empty ? null : item.getName());
+                }
+            };
+            cell.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> {
+                if (cell.isEmpty()) {
+                    listViewAutographs.getSelectionModel().select(-1);
+                }
+            });
+            cell.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, event -> {
+                cell.setContextMenu(cell.isEmpty() ? getEmptyPhotoboothMenu() : getPhotoboothMenu(cell));
+            });
+            return cell;
+        });
+        listViewPhotobooth.setContextMenu(getEmptyPhotoboothMenu());
     }
 
     private ContextMenu getEmptyEventsMenu() {
@@ -98,9 +148,7 @@ public class TabGuestsContentController extends ContentController {
         MenuItem add = new MenuItem("Add");
         menu.getItems().add(add);
 
-        add.setOnAction(event -> {
-            addEvent();
-        });
+        add.setOnAction(event -> addEvent());
         return menu;
     }
 
@@ -110,12 +158,49 @@ public class TabGuestsContentController extends ContentController {
         MenuItem remove = new MenuItem("Remove");
         menu.getItems().addAll(add, remove);
 
-        add.setOnAction(event -> {
-            addEvent();
-        });
-        remove.setOnAction(event -> {
-            removeEvent(cell.getItem());
-        });
+        add.setOnAction(event -> addEvent());
+        remove.setOnAction(event -> removeEvent(cell.getItem()));
+
+        return menu;
+    }
+
+    private ContextMenu getEmptyAutographMenu() {
+        ContextMenu menu = new ContextMenu();
+        MenuItem add = new MenuItem("Add");
+        menu.getItems().add(add);
+        add.setOnAction(event -> addAutograph());
+        return menu;
+    }
+
+    private ContextMenu getAutographMenu (ListCell<LocatedCalendarEvent> cell) {
+        ContextMenu menu = new ContextMenu();
+        MenuItem add = new MenuItem("Add");
+        MenuItem remove = new MenuItem("Remove");
+        menu.getItems().addAll(add, remove);
+
+        add.setOnAction(event -> addAutograph());
+        remove.setOnAction(event -> removeAutograph(cell.getItem()));
+
+        return menu;
+    }
+
+    private ContextMenu getEmptyPhotoboothMenu() {
+        ContextMenu menu = new ContextMenu();
+        MenuItem add = new MenuItem("Add");
+        menu.getItems().add(add);
+
+        add.setOnAction(event -> addPhotobooth());
+        return menu;
+    }
+
+    private ContextMenu getPhotoboothMenu(ListCell<LocatedCalendarEvent> cell) {
+        ContextMenu menu = new ContextMenu();
+        MenuItem add = new MenuItem("Add");
+        MenuItem remove = new MenuItem("Remove");
+        menu.getItems().addAll(add, remove);
+
+        add.setOnAction(event -> addPhotobooth());
+        remove.setOnAction(event -> removePhotobooth(cell.getItem()));
 
         return menu;
     }
@@ -160,6 +245,80 @@ public class TabGuestsContentController extends ContentController {
         changed();
     }
 
+    private void addAutograph() {
+        LocatedCalendarEvent event = getLocatedCalendarEvent();
+        if (event != null) {
+            mGuest.getAutograph().add(event);
+        }
+    }
+
+
+    private void removeAutograph (CalendarEvent event) {
+        mGuest.getAutograph().remove(event);
+    }
+
+    private void addPhotobooth() {
+        LocatedCalendarEvent event = getLocatedCalendarEvent();
+        if (event != null) {
+            mGuest.getPhotobooth().add(event);
+        }
+    }
+
+    private void removePhotobooth (CalendarEvent event) {
+        mGuest.getPhotobooth().remove(event);
+    }
+
+    private LocatedCalendarEvent getLocatedCalendarEvent() {
+        ArLocation arLoc;
+        CalendarDate calDate;
+        String startTime;
+        String endTime;
+
+        List<ArLocation> locChoices = LocationManager.getInstance().getLocations();
+        ChoiceDialog<ArLocation> selectLocation = new ChoiceDialog<>(locChoices.get(0), locChoices);
+        selectLocation.setTitle("Add Event");
+        selectLocation.setHeaderText("Set Location");
+        Optional<ArLocation> location = selectLocation.showAndWait();
+        if (location.isPresent()) {
+            arLoc = location.get();
+        } else {
+            return null;
+        }
+        List<CalendarDate> dateChoices = DateManager.getInstance().getDates();
+        ChoiceDialog<CalendarDate> selectDate = new ChoiceDialog<>(dateChoices.get(0), dateChoices);
+        selectDate.setTitle("Add Event");
+        selectDate.setHeaderText("Set Date");
+        Optional<CalendarDate> date = selectDate.showAndWait();
+        if (date.isPresent()) {
+            calDate = date.get();
+        } else {
+            return null;
+        }
+        TextInputDialog timeDialog = new TextInputDialog();
+        timeDialog.setTitle("Add Event");
+        timeDialog.setHeaderText("Set start time");
+        Optional<String> start = timeDialog.showAndWait();
+        if (start.isPresent()) {
+            startTime = start.get();
+        } else {
+            return null;
+        }
+        timeDialog.setHeaderText("Set end time");
+        Optional<String> end = timeDialog.showAndWait();
+        if (end.isPresent()) {
+            endTime = end.get();
+        } else {
+            return null;
+        }
+
+        LocatedCalendarEvent event = new LocatedCalendarEvent();
+        event.setDate(calDate);
+        event.setLocation(arLoc);
+        event.setStart(EventTimeParser.parse(startTime));
+        event.setEnd(EventTimeParser.parse(endTime));
+        return event;
+    }
+
     private void save() {
         if (mGuest != null) {
             mGuest.setName(textFieldName.getText());
@@ -193,12 +352,20 @@ public class TabGuestsContentController extends ContentController {
                 imagePortrait.setImage(null);
             }
             events.addAll(mGuest.getEvents());
+            SortedList<LocatedCalendarEvent> sortedAutograph = new SortedList<>(mGuest.getAutograph());
+            sortedAutograph.setComparator(Comparator.comparing(LocatedCalendarEvent::getName));
+            listViewAutographs.setItems(sortedAutograph);
+            SortedList<LocatedCalendarEvent> sortedPhotobooth = new SortedList<>(mGuest.getPhotobooth());
+            sortedAutograph.setComparator(Comparator.comparing(LocatedCalendarEvent::getName));
+            listViewPhotobooth.setItems(sortedPhotobooth);
         } else {
             setDisable(true);
             textFieldName.setText("");
             textFieldJapanese.setText("");
             textFieldTitle.setText("");
             imagePortrait.setImage(null);
+            listViewAutographs.setItems(null);
+            listViewPhotobooth.setItems(null);
         }
     }
 
@@ -209,6 +376,8 @@ public class TabGuestsContentController extends ContentController {
         imagePortrait.setDisable(disable);
         buttonChangeImage.setDisable(disable);
         listViewEvents.setDisable(disable);
+        listViewAutographs.setDisable(disable);
+        listViewPhotobooth.setDisable(disable);
     }
 
     private void changed() {

@@ -90,4 +90,9 @@ public class ArLocation implements Iterable<ArEvent>{
         void update();
     }
 
+    @Override
+    public String toString() {
+        return getPurpose() + " - " + getLocation();
+    }
+
 }

@@ -9,7 +9,9 @@ import cvic.anirevo.model.anirevo.*;
 import cvic.anirevo.model.calendar.CalendarDate;
 import cvic.anirevo.model.calendar.CalendarEvent;
 import cvic.anirevo.model.calendar.DateManager;
+import cvic.anirevo.model.calendar.LocatedCalendarEvent;
 import cvic.anirevo.utils.JSONUtils;
+import javafx.collections.ObservableList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -181,7 +183,26 @@ public class Unparser {
         if (guest.getPortraitPath() != null && guest.getPortraitPath().length() != 0) {
             guestObject.put("image", guest.getPortraitPath());
         }
+        if (guest.getAutograph().size() != 0) {
+            guestObject.put("autographs", arrayifyLocCalEvents(guest.getAutograph()));
+        }
+        if (guest.getPhotobooth().size() != 0) {
+            guestObject.put("photobooth", arrayifyLocCalEvents(guest.getPhotobooth()));
+        }
         return guestObject;
+    }
+
+    private static JSONArray arrayifyLocCalEvents(ObservableList<LocatedCalendarEvent> events) {
+        JSONArray output = new JSONArray();
+        for (LocatedCalendarEvent event : events) {
+            JSONObject eventObject = new JSONObject();
+            eventObject.put("date", event.getDate().getName());
+            eventObject.put("location", event.getLocation().getPurpose());
+            eventObject.put("start", event.getStartTime().shortString());
+            eventObject.put("end", event.getEndTime().shortString());
+            output.put(eventObject);
+        }
+        return output;
     }
 
 }
