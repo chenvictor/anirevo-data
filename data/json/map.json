@@ -6,5 +6,9 @@
   {
     "image": "vcc_level_1.png",
     "name": "Ground Level"
+  },
+  {
+    "image": "icon-128.png",
+    "name": "Happy Floor"
   }
 ]
